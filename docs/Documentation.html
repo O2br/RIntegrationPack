@@ -1,0 +1,56 @@
+<div class="wikidoc">
+<h1><u><strong>Welcome to the R Integration Pack</strong></u></h1>
+<p><strong><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1604490">CLICK HERE for the R Integration Pack User Guide</a></strong></p>
+<p><strong><a href="https://rintegrationpack.codeplex.com/wikipage?title=RShelf">CLICK HERE for the R Script &quot;Shelf&quot; that contains ready-to-go R Analytics</a></strong></p>
+<p><br>
+<strong><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1614971">R Workshop: Interim Dashboards thru Step 95&quot;</a></strong>
+<br>
+<strong><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1614972">R Workshop: Interim Dashboards, Steps 96 thru 134&quot;</a></strong><br>
+<strong><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1614973">R Workshop: Interim Dashboards, Steps 135 to end&quot;</a></strong>
+<br>
+<strong><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1614974">R Workshop: Improved Metric Expressions Text File&quot;</a></strong></p>
+<p><br>
+<strong><a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1614977">R Workshop: Kiara Fashion Logo&quot;</a></strong></p>
+<p>&nbsp;</p>
+<p><br>
+While the <a href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=1604490">
+User Guide</a> is the primary source of documentation for the R Integration Pack, here is some initial information to help new users get started.<br>
+<br>
+The R Integration Pack facilitates the deployment of analytics from the R statistical environment to MicroStrategy. It is intended to help MicroStrategy users extend the analytical features of the MicroStrategy platform using the capabilities of the R platform.
+ The R Integration Pack requires a general understanding of the MicroStrategy Business Intelligence environment, such as creating metrics and using them on reports, as well as a familiarity with the R programming environment.<br>
+<br>
+The R Integration Pack is an evolution of the FPWizard, an alternative approach to deploying analytics from R to MicroStrategy (see
+<a href="https://fpwizard.codeplex.com/">https://fpwizard.codeplex.com/</a>. The primary difference is in the ease-of-use of the two approaches:</p>
+<ul>
+<li>The FPWizard deploys R Analytics as MicroStrategy functions, which requires Microsoft Visual Studio and the MicroStrategy FPWizard add-in to compile each analytic into object code that is imported into MicroStrategy metadata.
+</li><li>This R Integration Pack eliminates the requirement for Visual Studio and compilation by providing a set of generic RScript functions that allow R analytics to be deployed to MicroStrategy as metrics instead of functions. MicroStrategy metrics are higher
+ level objects that are generally easier to deploy than MicroStrategy functions. </li><li>Both approaches include a user interface for capturing of the analytic's &quot;signature&quot;, the details about the analytic's inputs, outputs and any other essential characteristics. The FPWizard user interface was part of MicroStrategy FPWizard add-in for Microsoft
+ Visual Studio. The corresponding user interface for the R Integration Pack is available through the R package &quot;RIntegrationPack&quot; and it's &quot;deployR&quot; utility.
+</li></ul>
+<h1><u>Prerequisites</u>:</h1>
+<h2>MicroStrategy</h2>
+<ul>
+<li>MicroStrategy version 9.2.1 or higher must be installed. An exception is that to deploy a new R analytic as a derived metric in Visual Insight requires version 9.3.1.
+</li><li>MicroStrategy Architect is necessary for the one-time addition of the common RScript functions.
+</li></ul>
+<h2>R</h2>
+<ul>
+<li>R must be installed on systems that will execute the R analytics deployed to MicroStrategy. This includes the MicroStrategy Intelligence Server and any MicroStrategy Desktop clients that execute R analytics as derived metrics. R is not required on other
+ clients such MicroStrategy Web, MicroStrategy Mobile, MicroStrategy Visual Insight and MicroStrategy Office since they are consumers of analytics deployed to the MicroStrategy Intelligence Server.
+</li><li>R can be installed from <a href="http://CRAN.R-project.org">http://CRAN.R-project.org</a>.
+</li><li>If the R Analytic has dependencies on add-on packages that are not included standard with R, those packages must also added to the R installation on the MicroStrategy systems.
+</li></ul>
+<h1><u>Installation:</u></h1>
+<p>The R Integration Pack includes two types of installations:</p>
+<ul>
+<li>The installer provided on the <a href="http://rintegrationpack.codeplex.com/releases/">
+Downloads</a> tab of this site will update the MicroStrategy enviroment for executing R analytics.
+</li><li>The &quot;MicroStrategyR&quot; package can be installed as a standard R Package from <a href="http://CRAN.R-project.org">
+http://CRAN.R-project.org</a>. </li></ul>
+<h1><u>Usage:</u></h1>
+<p>These are the high-level steps for deploying an R analytics to MicroStrategy:</p>
+<ol>
+<li><u>R Script:</u> This is the R analytic to be deployed to MicroStrategy. </li><li><u>Capture the R Analytic's signature:</u> This is done in an R console using the deployR utility, which is part of the MicroStrategyR package.
+</li><li><u>Deploy the R Analytic to MicroStrategy:</u> This is done in MicroStrategy by creating a new metric using the metric expression provided by the deployR utility. The metric expression for each potential output also available in the R Script itself.
+</li></ol>
+</div><div class="ClearBoth"></div>

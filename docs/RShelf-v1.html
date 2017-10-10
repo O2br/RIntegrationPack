@@ -1,0 +1,258 @@
+<div class="wikidoc">
+<h1><a id="top"></a><span style="text-decoration:underline"><strong>R Scripts &quot;Shelf&quot;</strong></span></h1>
+<p>Here you'll find ready-to-go R Analytics which can easily be added to your R-enabled MicroStrategy environment.<br>
+If you can create a MicroStrategy metric then deploying R Analytics to MicroStrategy is easy.<br>
+<strong>No R experience is required.</strong></p>
+<p><a id="RShelf-v1" href="https://rintegrationpack.codeplex.com/wikipage?title=RShelf">These metric expressions work with
+<strong>all versions of the R Integration Pack</strong>.<br>
+<strong><u>Click Here</u></strong>: For metric expressions that use the new Version 2 features.</a><br>
+<a href="https://rintegrationpack.codeplex.com/#GettingStarted"><strong><u>Click Here</u></strong>: If you haven't already completed the installation steps.</a><br>
+<a href="#HowToUse"><strong><u>Click Here</u></strong>: For details on how to deploy these analytics and use the new R Integration Pack Version 2 features.</a></p>
+<table border="1" width="100%">
+<thead>
+<tr>
+<td width="50%"><font size="3" color="Black"><strong>R Analytic</strong></font></td>
+<td width="50%"><strong><font size="3" color="green"><img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871234" alt="" border="0">Metric Expression (File, All Versions)</font></strong></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td rowspan="1" valign="top"><strong>Seasonal Forecasting</strong>
+<p>One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses R&rsquo;s ordinary least squares regression algorithm to fit the best curve that captures the general trend and season variability of numeric data
+ so it can use to predict future values.</p>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="SeasonalForcasting.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871721">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="SeasonalForecasting.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871734">Documentation</a></td>
+<td valign="top">
+<div><u>Forecast</u> returns the forecasted value:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;SeasonalForecasting.R&quot;, _InputNames=&quot;Target, Trend, Season&quot;, StringParam9=&quot;&quot;&gt;(Target, Trend, Season)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="5" valign="top"><strong>ARIMA</strong>
+<p>One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses the Auto-Regressive Integrated with Moving Average (ARIMA) algorithm to project a sequence of values ahead into the future, based on the assumption
+ that data points taken over time may have an internal structure that can be measured. While ARIMA tends to be esoteric and complex, this analytic uses the &ldquo;auto.arima&rdquo; function from R&rsquo;s &ldquo;forecast&rdquo; package to search through a variety
+ of possible models in order to find the best one. Not only does this script generate the expected forecast values, it also provides outputs based on confidence bands, nominally set at 80% and 95% confidence levels.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="ARIMA.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871722">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="ARIMA.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871735">Documentation</a></p>
+</td>
+<td valign="top" style="border-bottom-style:dotted">
+<div><u>Forecast</u> returns the forecasted value:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;ARIMA.R&quot;, _InputNames=&quot;Target&quot;, SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8=&quot;&quot;, StringParam9=&quot;&quot;&gt;(Target)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted; border-bottom-style:dotted">
+<div><u>ForecastLo1</u> returns the forecasted lower value of the first confidence band:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;ARIMA.R&quot;, _InputNames=&quot;Target&quot;, _OutputVar=&quot;ForecastLo1&quot;, SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8=&quot;&quot;, StringParam9=&quot;&quot;&gt;(Target)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted; border-bottom-style:dotted">
+<div><u>ForecastHi1</u> returns the forecasted upper value of the first confidence band:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;ARIMA.R&quot;, _InputNames=&quot;Target&quot;, _OutputVar=&quot;ForecastHi1&quot;, SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8=&quot;&quot;, StringParam9=&quot;&quot;&gt;(Target)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted; border-bottom-style:dotted">
+<div><u>ForecastLo2</u> returns the forecasted lower value of the second confidence band:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;ARIMA.R&quot;, _InputNames=&quot;Target&quot;, _OutputVar=&quot;ForecastLo2&quot;, SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8=&quot;&quot;, StringParam9=&quot;&quot;&gt;(Target)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted; border-bottom-style:dotted">
+<div><u>ForecastHi2</u> returns the forecasted upper value of the second confidence band:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;ARIMA.R&quot;, _InputNames=&quot;Target&quot;, _OutputVar=&quot;ForecastHi2&quot;, SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8=&quot;&quot;, StringParam9=&quot;&quot;&gt;(Target)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="1" valign="top"><strong>k-Means Clustering</strong>
+<p>Using the K-Means algorithm, this analytic clusters records &quot;by their nature&quot; so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a central point, it's &quot;mean&quot;.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="kMeans.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871723">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="kMeans.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871736">Documentation</a></p>
+</td>
+<td valign="top" style="border-bottom-style:dotted">
+<div><u>Cluster</u> returns the cluster to which the record belongs:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;kMeansClustering.R&quot;, _InputNames=&quot;Vars&quot;, NumericParam1=4, NumericParam2=10, StringParam9=&quot;&quot;&gt;(Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><strong>k-Medoids Clustering</strong>
+<p>Using the K-Medoids algorithm, this analytic clusters records &quot;by their nature&quot; so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's &quot;medoid&quot;.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="kMedoids.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871724">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="kMedoids.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871737">Documentation</a></p>
+</td>
+<td valign="top" style="border-bottom-style:dotted">
+<div><u>Cluster</u> returns the cluster to which the record belongs:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;kMedoidsClustering.R&quot;, _InputNames=&quot;Vars&quot;, NumericParam1=4, NumericParam2=10, StringParam9=&quot;&quot;&gt;(Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted">
+<div><u>Medoids</u> returns the cluster if a record is the mediod of that cluster, 0 otherwise:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;kMedoidsClustering.R&quot;, _InputNames=&quot;Vars&quot;, _OutputVar=&quot;Medoids&quot;, NumericParam1=4, NumericParam2=10, StringParam9=&quot;&quot;&gt;(Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><strong>k-Nearest Neighbors</strong>
+<p>k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test
+ dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="kNN.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871725">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="kNN.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871738">Documentation</a></p>
+</td>
+<td valign="top" style="border-bottom-style:dotted">
+<div><u>Class</u> returns the predicted class as a string:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;kNN.R&quot;, _InputNames=&quot;ID, Target, Training, Vars&quot;, BooleanParam9=TRUE, NumericParam1=1, StringParam9=&quot;kNN&quot;&gt;(ID, Target, Training, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted">
+<div><u>ClassId</u> returns the predicted class as a number:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;kNN.R&quot;, _InputNames=&quot;ID, Target, Training, Vars&quot;, _OutputVar=&quot;ClassId&quot;, BooleanParam9=TRUE, NumericParam1=1, StringParam9=&quot;kNN&quot;&gt;(ID, Target, Training, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><strong>Naive Bayes</strong>
+<p>Na&iuml;ve Bayes is a simple classification technique wherein the Na&iuml;ve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm then calculates the conditional
+ likelihood of each potential class given the particular value for that variable and then multiplies those effects together to determine the probability for each class. The class with the highest probability is returned as the predicted class.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="NaiveBayes.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871726">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="NaiveBayer.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871739">Documentation</a></p>
+</td>
+<td valign="top" style="border-right-style:dotted; border-bottom-style:dotted">
+<div><u>Class</u> returns the predicted class as a string:/div&gt; <code><font color="green">RScript&lt;_RScriptFile=&quot;NaiveBayes.R&quot;, _InputNames=&quot;Target, Vars&quot;, BooleanParam9=TRUE, StringParam9=&quot;NaiveBayes&quot;, NumericParam1=1&gt;(Target, Vars)</font><code>
+</code></code></div>
+</td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted">
+<div><u>ClassId</u> returns the predicted class as a number:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;NaiveBayes.R&quot;, _InputNames=&quot;Target, Vars&quot;, _OutputVar=&quot;ClassId&quot;, BooleanParam9=TRUE, StringParam9=&quot;NaiveBayes&quot;, NumericParam1=1&gt;(Target, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><strong>Neural Network</strong>
+<p>Neural Network is an advanced machine learning classification technique wherein a model is constructed that aims to simulate the thought process performed by the human brain. A model consists of &ldquo;neurons&rdquo; that are interconnected by an activation
+ function. Every record is then passed through the network from the appropriate input neuron to the proper output neuron through a series of weights and transformations defined by the activation function.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="NeuralNetwork.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871727">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="NeuralNetwork.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871740">Documentation</a></p>
+</td>
+<td valign="top" style="border-bottom-style:dotted">
+<div><u>Class</u> returns the predicted class as a string:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;NeuralNetwork.R&quot;, _InputNames=&quot;Target, Vars&quot;, StringParam9=&quot;NeuralNetwork&quot;, BooleanParam9=TRUE, NumericParam1=3, NumericParam2=42&gt;(Target, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted">
+<div><u>ClassId</u> returns the predicted class as a number:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;NeuralNetwork.R&quot;, _InputNames=&quot;Target, Vars&quot;, _OutputVar=&quot;ClassId&quot;, StringParam9=&quot;NeuralNetwork&quot;, BooleanParam9=TRUE, NumericParam1=3, NumericParam2=42&gt;(Target, Vars)</font><code><font color="green">
+<code><font color="green">RScript&lt;_RScriptFile=&quot;NeuralNetwork.R&quot;, _InputNames=&quot;Target, Vars&quot;, _OutputVar=&quot;ClassId&quot;, _Params=&quot;FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42</font><code>
+</code></code></font></code></code></td>
+</tr>
+<tr>
+<td rowspan="1" valign="top"><strong>Pairwise Variable Correlation</strong>
+<p>PairwiseCorr measures the correlation between pairs of numeric variables to show how they behave with respect to each other. The primary output of this analytic is a correlation plot and a correlation table that contain the correlations of the variables
+ when taken in pairs.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="PairwiseCorr.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871728">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="PairwiseCorr.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871741">Documentation</a></p>
+</td>
+<td valign="top" style="border-top-style:dotted">
+<div><u>Result</u> returns &quot;Ok&quot; when the correlations were calculated with no errors:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;PairwiseCorr.R&quot;, _InputNames=&quot;Labels, Vars&quot;, BooleanParam1=TRUE, NumericParam1=0, StringParam8=&quot;PairwiseCorr&quot;, StringParam9=&quot;PairwiseCorr&quot;&gt;(Labels, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="2" valign="top"><strong>Random Forests</strong>
+<p>Random Forest is an advanced classification technique wherein the training dataset is used to construct many independent decision trees. Every record is then passed into each individual decision tree for classification, and the class that is predicted by
+ the majority of those decision trees is returned as the predicted class for that record.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="wikiFile11" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871729">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="wikiFile12" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871742">Documentation</a></p>
+</td>
+<td valign="top" style="border-bottom-style:dotted">
+<div><u>Class</u> returns the predicted class as a string:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;RandomForest.R&quot;, _InputNames=&quot;Target, Vars&quot;, BooleanParam9=TRUE, StringParam9=&quot;RandomForest&quot;, NumericParam1=750, NumericParam2=3, NumericParam3=42&gt;(Target, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td valign="top" style="border-top-style:dotted">
+<div><u>ClassId</u> returns the predicted class as a number:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;RandomForest.R&quot;, _InputNames=&quot;Target, Vars&quot;, _OutputVar=&quot;ClassId&quot;, BooleanParam9=TRUE, StringParam9=&quot;RandomForest&quot;, NumericParam1=750, NumericParam2=3, NumericParam3=42&gt;(Target, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="1" valign="top"><strong>Stepwise Logistic Regression</strong>
+<p>Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="StepwiseLogisticRegression.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871730">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="StepwiseLogisticRegression.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=815743">Documentation</a></p>
+</td>
+<td valign="top" style="border-top-style:dotted">
+<div><u>Probability</u> returns the predicted probability for each record:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;StepwiseLogisticRegression.R&quot;, _InputNames=&quot;Target, Vars&quot;, StringParam9=&quot;&quot;, BooleanParam1=TRUE&gt;(Target, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="1" valign="top"><strong>Stepwise Regression</strong>
+<p>Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="StepwiseRegression.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871731">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="StepwiseRegression.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871743">Documentation</a></p>
+</td>
+<td valign="top" style="border-top-style:dotted">
+<div><u>Forecast</u> returns the predictions from the model:</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;StepwiseRegression.R&quot;, _InputNames=&quot;Target, Vars&quot;, StringParam9=&quot;StepwiseRegression&quot;, BooleanParam1=TRUE&gt;(Target, Vars)</font><code>
+</code></code></td>
+</tr>
+<tr>
+<td rowspan="1" valign="top"><strong>Survival Analysis</strong>
+<p>On a long enough timeline, the survival rate for everything drops to zero, including events such as a component failure or a customer being lost. This analytic uses the Cox Regression algorithm to quantify the effect that each independent variable has on
+ the likelihood that such an event will occur at some point in the future.</p>
+<p><img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><a id="Survival.R" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871732 ">R Script</a>
+<br>
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><a id="Survival.pdf" href="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871744">Documentation</a></p>
+</td>
+<td valign="top" style="border-top-style:dotted">
+<div><u>Risk</u> returns the risk of an event occurring relative to the average :</div>
+<code><font color="green">RScript&lt;_RScriptFile=&quot;Survival.R&quot;, _InputNames=&quot;Time, Status, Vars&quot;, BooleanParam9=FALSE, StringParam9=&quot;&quot;&gt;(Time, Status, Vars)</font><code>
+</code></code></td>
+</tr>
+</tbody>
+</table>
+<h2><a id="HowToUse"></a>How to use:</h2>
+<p><img title="RScriptsSourcing.png" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871703" alt="RScriptsSourcing.png" width="201" height="213" align="right"></p>
+<p>These R Analytics are deployed to MicroStrategy as metrics by copying the metric expressions provided here into any MicroStrategy Metric Editor. The shelf includes metric expressions for Version 1 of the R Integration Pack as well as variations that take
+ advantage of new the features in Version 2.</p>
+<p>First, you'll have to decide how you want to access the R Script to be executed:</p>
+<ol>
+<li><strong><u>URL &quot;On-the-Shelf&quot;:</u></strong> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871234" alt="" border="0">
+<font size="3" color="red">Metric Expression (URL)</font> is the fastest way to get started for systems with internet connectivity is to access these R Analytics via the web (requires R Integration Pack Version 2 or higher).
+</li><li><strong><u>File &quot;Off-the-Shelf&quot;:</u></strong> <img src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=871234" alt="" border="0">
+<font size="3" color="green">Metric Expression (File)</font> accesses these R Scripts using the file system. Just download and save the
+<img src="https://home.microstrategy.com/_layouts/IMAGES/icgen.gif" alt="" border="0"><strong>R Script</strong> to the Centralized RScripts Repository. Please note that each metric expression can also be found inside its R Script within the MicroStrategy header
+ block at the top. </li></ol>
+<p><img title="Params3.png" src="http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=872554" alt="Params.png" width="416" height="136" align="right"></p>
+<p>And Version 2 of the R Integration Pack makes it even simpler for end-users control the analytic's execution thanks to the
+<strong>_Params</strong> parameter that allows function parameters to be referenced by name using a string of name-value pairs. This is in addition to the original set of 27 pre-defined parameters (9 boolean, 9 numeric and 9 string).</p>
+<p>After you've copied the metric expression for the analytic you wish to deploy:</p>
+<ol>
+<li>Paste the Metric Expression into any MicroStrategy metric editor </li><li>Match analytic's inputs and function parameters for your application </li><li>Name and save the metric so it can be added to any MicroStrategy report, scorecard or dashboard
+</li></ol>
+<p>For details about how a particular analytic works, be sure to check out its <img src="https://home.microstrategy.com/_layouts/IMAGES/icpdf.gif" alt="" border="0"><strong>Documentation</strong>.</p>
+<p><a href="#top">Go to top</a></p>
+<h2>Share your scripts:</h2>
+<p>We'd like to encourage everyone in the community to use and share these R Scripts. &nbsp;Have you written an R Script you'd like to share with the rest of the community? That would be great!</p>
+<p>If you have a R Script you'd like to contribute, please email your script and it's documentation to
+<a href="mailto:rpechter@microstrategy.com">rpechter@microstrategy.com</a>. We'll test it to confirm its ready for general use by others. Once accepted, we'll add it to this page.</p>
+<h3>Code Disclaimer:</h3>
+<p>This page provides programming examples.&nbsp; MicroStrategy grants you a nonexclusive copyright license to use all programming code examples from which you can use or&nbsp;generate similar function tailored to your own specific needs.&nbsp; All sample code
+ is provided for illustrative purposes only. These examples have not been thoroughly tested under all conditions. MicroStrategy, therefore, cannot guarantee or imply reliability, serviceability, or function of these programs.&nbsp; All programs contained herein
+ are provided to you &quot;AS IS&quot; without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.</p>
+<p><a href="#top">Go to </a></p>
+</div><div class="ClearBoth"></div>
