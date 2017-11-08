@@ -49,9 +49,9 @@ Delivering results from R to any BI User is what the R Integration Pack is all a
 
 
 
-[img1]: http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=867368
-[img2]: http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=867366
-[img3]: http://download-codeplex.sec.s-msft.com/Download?ProjectName=rintegrationpack&DownloadId=867367
+[img1]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_RIPBlockDiagram.png
+[img2]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Install-Deploy-NoNum.png
+[img3]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Develop-NoNum.png
 
 [user_guide]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/docs/Documentation_RIntegrationPackUserGuide.pdf>
 [scripts]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts>
