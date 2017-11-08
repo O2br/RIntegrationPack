@@ -13,7 +13,7 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 #### ARIMA
 One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses the Auto-Regressive Integrated with Moving Average (ARIMA) algorithm to project a sequence of values ahead into the future, based on the assumption that data points taken over time may have an internal structure that can be measured. While ARIMA tends to be esoteric and complex, this analytic uses the “auto.arima” function from R’s “forecast” package to search through a variety of possible models in order to find the best one. Not only does this script generate the expected forecast values, it also provides outputs based on confidence bands, nominally set at 80% and 95% confidence levels.
 
-![img_arima]
+![arima_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript](www.google.com)
@@ -123,29 +123,63 @@ After you've copied the metric expression for the analytic you wish to deploy:
 This page provides programming examples.  MicroStrategy grants you a nonexclusive copyright license to use all programming code examples from which you can use or generate similar function tailored to your own specific needs.  All sample code is provided for illustrative purposes only. These examples have not been thoroughly tested under all conditions. MicroStrategy, therefore, cannot guarantee or imply reliability, serviceability, or function of these programs.  All programs contained herein are provided to you "AS IS" without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.
 
 
+[lnk_top]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#off-the-shelf-r-scripts>
 
-[arima]:
-[seas_forc]:
-[step_reg]:
-[surv]:
-[knn]:
-[nn]:
-[nb]:
-[rf]:
-[step_logreg]:
-[kclust]:
-[kmed]:
-[pair_corr]:
+[arima]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#arima>
+[arima_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_ARIMA.R>
+[arima_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_ARIMA.pdf>
+[arima_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_ARIMA.png
 
-[lnk_top]: <www.google.com>
+[seasforecast]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#seasonal-forecasting>
+[seasforecast_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SeasonalForecasting.R>
+[seasforecast_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SeasonalForecasting.pdf>
+[seasforecast_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SeasonalForecast.PNG
 
-[img_arima]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_ARIMA.png
-[img_seasforc]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SeasonalForecast.PNG
-[img_kclust]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMeans.PNG
-[img_kmed]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMedoids.PNG
-[img_nb]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NaiveBayes.PNG
-[img_nn]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NeuralNetwork.PNG
-[img_pairwise]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_PairwiseCorr.PNG
-[img_rf]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_RandomForest.PNG
-[img_survival]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Survival.PNG
+[stepreg]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#stepwise-regression>
+[stepreg_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseRegression.R>
+[stepreg_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseRegression.pdf>
+
+[survival]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#survival-analysis>
+[survival_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_Survival.R>
+[survival_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_Survival.pdf>
+[survival_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Survival.PNG
+
+[knn]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#k-nearest-neighbors>
+[knn_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kNN.R>
+[knn_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kNN.pdf>
+
+[nn]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#neural-network>
+[nn_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NeuralNetwork.R>
+[nn_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NeuralNetwork.pdf>
+[nn_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NeuralNetwork.PNG
+
+[nb]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#naive-bayes>
+[nb_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NaiveBayes.R>
+[nb_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NaiveBayes.pdf>
+[nb_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NaiveBayes.PNG
+
+[rf]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#random-forest>
+[rf_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_RandomForest.R>
+[rf_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_RandomForest.pdf>
+[rf_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_RandomForest.PNG
+
+[steplogreg]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#stepwise-logistic-regression>
+[steplogreg_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseLogistic.R>
+[steplogreg_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseLogistic.pdf>
+
+[kcluster]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#k-means-clustering>
+[kcluster_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMeansClustering.R>
+[kcluster_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMeansClustering.pdf>
+[kcluster_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMeans.PNG
+
+[kmedoids]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#k-medoids-clustering>
+[kmedoids_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMedoidsClustering.R>
+[kmedoids_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMedoidsClustering.pdf>
+[kmedoids_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMedoids.PNG
+
+[pairwise]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#pairwise-correlation>
+[pairwise_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_PairwiseCorr.R>
+[pairwise_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_PairwiseCorr.pdf>
+[pairwise_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_PairwiseCorr.PNG
+
 [img_howtouse]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Params3.png
