@@ -14,8 +14,17 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses the Auto-Regressive Integrated with Moving Average (ARIMA) algorithm to project a sequence of values ahead into the future, based on the assumption that data points taken over time may have an internal structure that can be measured. While ARIMA tends to be esoteric and complex, this analytic uses the “auto.arima” function from R’s “forecast” package to search through a variety of possible models in order to find the best one. Not only does this script generate the expected forecast values, it also provides outputs based on confidence bands, nominally set at 80% and 95% confidence levels.
 
 ![arima_img]
-##### Metric Expression
+##### Metric Expression - Forecast returns the forecasted value
 `RScript<_RScriptFile="ARIMA.R", _InputNames="Target", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`
+##### Metric Expression - ForecastLo1 returns the forecasted lower value of the first confidence band
+`RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`
+##### Metric Expression - ForecastHi1 returns the forecasted upper value of the first confidence band
+`RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastHi1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`
+##### Metric Expression - ForecastLo2 returns the forecasted lower value of the second confidence band
+`RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`
+##### Metric Expression - ForecastHi2 returns the forecasted upper value of the second confidence band
+`RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastHi2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`
+
 * [RScript][arima_script]
 * [Documentation][arima_doc]
 * [Back to the top][lnk_top]
