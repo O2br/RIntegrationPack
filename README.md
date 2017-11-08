@@ -1,8 +1,8 @@
 # MicroStrategy R Integration Pack
 #### Quick Links
- * [R Integration Pack User Guide](https://github.com/MicroStrategy/RIntegrationPack/blob/master/docs/Documentation_RIntegrationPackUserGuide.pdf)
- * Shelf Scripts
-
+* [R Integration Pack User Guide](https://github.com/MicroStrategy/RIntegrationPack/blob/master/docs/Documentation_RIntegrationPackUserGuide.pdf)
+* [Scripts you can use in MicroStrategy dashboards](https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts)
+* [Installation](https://github.com/MicroStrategy/RIntegrationPack/tree/master/installers)
 #
 
 The MicroStrategy R Integration Pack makes it easy for anyone to deploy sophisticated R Analytics to any user, anywhere, any time. Thanks to an architecture designed with extensibility at its core, MicroStrategy delivers an innovative R integration that sets the standard for simplicity, scalability and performance. Now virtually any algorithm, statistic or analysis can be added to the industry's leading Business Intelligence platform thanks to third generation features no other BI product can match:
