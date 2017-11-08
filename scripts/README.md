@@ -22,6 +22,8 @@ One of the most common applications of predictive analytics is to forecast time-
 
 #### Seasonal Forecasting
 One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses R’s ordinary least squares regression algorithm to fit the best curve that captures the general trend and seasonal variability of numerical data so it can use to predict future values.
+
+![seasforecast_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][seasforecast_script]
@@ -38,6 +40,7 @@ Stepwise Linear Regression is a variant on classical Linear Regression in which 
 
 #### Survival Analysis
 Survival Analysis can be used to predict the probability of an event occuring, such as a component failure or a customer being lost. This analytic uses the Cox Regression algorithm to quantify the effect that each independent variable has on the likelihood that such an event will occur at some point in the future.
+
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][survival_script]
@@ -46,6 +49,7 @@ Survival Analysis can be used to predict the probability of an event occuring, s
 
 #### k-Nearest Neighbors
 k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.
+
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][knn_script]
@@ -54,6 +58,8 @@ k-Nearest Neighbors (kNN) is a simple classification technique that is unique in
 
 #### Neural Network
 Neural Network is an advanced machine learning classification technique wherein a model is constructed that aims to simulate the thought process performed by the human brain. A model consists of “neurons” that are interconnected by an activation function. Every record is then passed through the network from the appropriate input neuron to the proper output neuron through a series of weights and transformations defined by the activation function.
+
+![nn_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][nn_script]
@@ -62,6 +68,8 @@ Neural Network is an advanced machine learning classification technique wherein 
 
 #### Naive Bayes
 Naïve Bayes is a simple classification technique wherein the Naïve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm then calculates the conditional likelihood of each potential class given the particular value for that variable and then multiplies those effects together to determine the probability for each class. The class with the highest probability is returned as the predicted class.
+
+![nb_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][nb_script]
@@ -70,6 +78,8 @@ Naïve Bayes is a simple classification technique wherein the Naïve assumption 
 
 #### Random Forest
 Random Forest is an advanced classification technique wherein the training dataset is used to construct many independent decision trees. Every record is then passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
+
+![rf_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][rf_script]
@@ -78,6 +88,7 @@ Random Forest is an advanced classification technique wherein the training datas
 
 #### Stepwise Logistic Regression
 Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.
+
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][steplogreg_script]
@@ -86,6 +97,8 @@ Stepwise Linear Regression is a variant on classical Linear Regression in which 
 
 #### k-Means Clustering
 Using the K-Means algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a central point, it's "mean".
+
+![kcluster_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][kcluster_script]
@@ -94,6 +107,8 @@ Using the K-Means algorithm, this analytic clusters records "by their nature" so
 
 #### k-Medoids Clustering
 Using the K-Medoids algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's "medoid".
+
+![kmedoids_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][kmedoids_script]
@@ -102,6 +117,8 @@ Using the K-Medoids algorithm, this analytic clusters records "by their nature" 
 
 #### Pairwise Correlation
 PairwiseCorr measures the correlation between pairs of numeric variables to show how they behave with respect to each other. The primary output of this analytic is a correlation plot and a correlation table that contain the correlations of the variables when taken in pairs.
+
+![pairwise_img]
 ##### Metric Expression
 'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
 * [RScript][pairwise_script]
