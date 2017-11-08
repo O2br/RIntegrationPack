@@ -15,7 +15,7 @@ One of the most common applications of predictive analytics is to forecast time-
 
 ![arima_img]
 ##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+`RScript<_RScriptFile="ARIMA.R", _InputNames="Target", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`
 * [RScript][arima_script]
 * [Documentation][arima_doc]
 * [Back to the top][lnk_top]
@@ -25,15 +25,16 @@ One of the most common applications of predictive analytics is to forecast time-
 
 ![seasforecast_img]
 ##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+`RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)`
 * [RScript][seasforecast_script]
 * [Documentation][seasforecast_doc]
 * [Back to the top][lnk_top]
 
 #### Stepwise Regression
 Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+
+##### Metric Expression - Forecast returns the predictions from the model
+`RScript<_RScriptFile="StepwiseRegression.R", _InputNames="Target, Vars", _Params="FileName='StepwiseRegression', Stepwise=TRUE">(Target, Vars)`
 * [RScript][stepreg_script]
 * [Documentation][stepreg_doc]
 * [Back to the top][lnk_top]
@@ -41,8 +42,8 @@ Stepwise Linear Regression is a variant on classical Linear Regression in which 
 #### Survival Analysis
 Survival Analysis can be used to predict the probability of an event occuring, such as a component failure or a customer being lost. This analytic uses the Cox Regression algorithm to quantify the effect that each independent variable has on the likelihood that such an event will occur at some point in the future.
 
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+##### Metric Expression - Risk returns the risk of an event occurring relative to the average 
+`RScript<_RScriptFile="Survival.R", _InputNames="Time, Status, Vars", _Params="TrainMode=FALSE, FileName='Survival'">(Time, Status, Vars)`
 * [RScript][survival_script]
 * [Documentation][survival_doc]
 * [Back to the top][lnk_top]
@@ -50,8 +51,10 @@ Survival Analysis can be used to predict the probability of an event occuring, s
 #### k-Nearest Neighbors
 k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.
 
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+##### Metric Expression - Class returns the predicted class as a string
+`RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)`
+##### Metric Expression - ClassId returns the predicted class as a number
+`RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _OutputVar="ClassId", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)`
 * [RScript][knn_script]
 * [Documentation][knn_doc]
 * [Back to the top][lnk_top]
@@ -60,8 +63,11 @@ k-Nearest Neighbors (kNN) is a simple classification technique that is unique in
 Neural Network is an advanced machine learning classification technique wherein a model is constructed that aims to simulate the thought process performed by the human brain. A model consists of “neurons” that are interconnected by an activation function. Every record is then passed through the network from the appropriate input neuron to the proper output neuron through a series of weights and transformations defined by the activation function.
 
 ![nn_img]
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+##### Metric Expression - Class returns the predicted class as a string
+`RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)`
+##### Metric Expression - ClassId returns the predicted class as a number
+`RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)`
+
 * [RScript][nn_script]
 * [Documentation][nn_doc]
 * [Back to the top][lnk_top]
@@ -70,8 +76,11 @@ Neural Network is an advanced machine learning classification technique wherein 
 Naïve Bayes is a simple classification technique wherein the Naïve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm then calculates the conditional likelihood of each potential class given the particular value for that variable and then multiplies those effects together to determine the probability for each class. The class with the highest probability is returned as the predicted class.
 
 ![nb_img]
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+##### Metric Expression - Class returns the predicted class as a string
+`RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)`
+##### Metric Expression - ClassId returns the predicted class as a number
+`RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)`
+
 * [RScript][nb_script]
 * [Documentation][nb_doc]
 * [Back to the top][lnk_top]
@@ -80,17 +89,20 @@ Naïve Bayes is a simple classification technique wherein the Naïve assumption 
 Random Forest is an advanced classification technique wherein the training dataset is used to construct many independent decision trees. Every record is then passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
 
 ![rf_img]
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+##### Metric Expression - Class returns the predicted class as a string
+`RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)`
+##### Metric Expression - ClassId returns the predicted class as a number
+`RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)`
+
 * [RScript][rf_script]
 * [Documentation][rf_doc]
 * [Back to the top][lnk_top]
 
-#### Stepwise Logistic Regression
+#### Stepwise Logistic Regression - Probability returns the predicted probability for each record
 Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.
 
 ##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+`RScript<_RScriptFile="StepwiseLogistic.R", _InputNames="Target, Vars", _Params="FileName='StepwiseLogistic', Stepwise=TRUE">(Target, Vars)`
 * [RScript][steplogreg_script]
 * [Documentation][steplogreg_doc]
 * [Back to the top][lnk_top]
@@ -100,7 +112,7 @@ Using the K-Means algorithm, this analytic clusters records "by their nature" so
 
 ![kcluster_img]
 ##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+`RScript<_RScriptFile="kMeansClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)`
 * [RScript][kcluster_script]
 * [Documentation][kcluster_doc]
 * [Back to the top][lnk_top]
@@ -109,8 +121,11 @@ Using the K-Means algorithm, this analytic clusters records "by their nature" so
 Using the K-Medoids algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's "medoid".
 
 ![kmedoids_img]
-##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+##### Metric Expression - Cluster returns the cluster to which the record belongs
+`RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)`
+##### Metric Expression - Medoids returns the cluster if a record is the medoid of that cluster, 0 otherwise
+`RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _OutputVar="Medoids", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)`
+
 * [RScript][kmedoids_script]
 * [Documentation][kmedoids_doc]
 * [Back to the top][lnk_top]
@@ -120,7 +135,7 @@ PairwiseCorr measures the correlation between pairs of numeric variables to show
 
 ![pairwise_img]
 ##### Metric Expression
-'RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)'
+`RScript<_RScriptFile="PairwiseCorr.R", _InputNames="Labels, Vars", _Params="HasLabels=TRUE, WindowSize=0, ImageName='PairwiseCorr', FileName='PairwiseCorr'">(Labels, Vars)`
 * [RScript][pairwise_script]
 * [Documentation][pairwise_doc]
 * [Back to the top][lnk_top]
