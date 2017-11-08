@@ -10,7 +10,7 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 | [Survival Analysis][survival]    | [Random Forest][rf]       |                      |
 |                      | [Stepwise Logistic Regression][steplogreg] |             |
 
-#### ARIMA
+### ARIMA
 One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses the Auto-Regressive Integrated with Moving Average (ARIMA) algorithm to project a sequence of values ahead into the future, based on the assumption that data points taken over time may have an internal structure that can be measured. While ARIMA tends to be esoteric and complex, this analytic uses the “auto.arima” function from R’s “forecast” package to search through a variety of possible models in order to find the best one. Not only does this script generate the expected forecast values, it also provides outputs based on confidence bands, nominally set at 80% and 95% confidence levels.
 
 ![arima_img]
@@ -29,7 +29,7 @@ One of the most common applications of predictive analytics is to forecast time-
 * [Documentation][arima_doc]
 * [Back to the top][lnk_top]
 
-#### Seasonal Forecasting
+### Seasonal Forecasting
 One of the most common applications of predictive analytics is to forecast time-based data. This analytic uses R’s ordinary least squares regression algorithm to fit the best curve that captures the general trend and seasonal variability of numerical data so it can use to predict future values.
 
 ![seasforecast_img]
@@ -39,7 +39,7 @@ One of the most common applications of predictive analytics is to forecast time-
 * [Documentation][seasforecast_doc]
 * [Back to the top][lnk_top]
 
-#### Stepwise Regression
+### Stepwise Regression
 Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.
 
 ##### Metric Expression - Forecast returns the predictions from the model
@@ -48,7 +48,7 @@ Stepwise Linear Regression is a variant on classical Linear Regression in which 
 * [Documentation][stepreg_doc]
 * [Back to the top][lnk_top]
 
-#### Survival Analysis
+### Survival Analysis
 Survival Analysis can be used to predict the probability of an event occuring, such as a component failure or a customer being lost. This analytic uses the Cox Regression algorithm to quantify the effect that each independent variable has on the likelihood that such an event will occur at some point in the future.
 
 ##### Metric Expression - Risk returns the risk of an event occurring relative to the average 
@@ -57,7 +57,7 @@ Survival Analysis can be used to predict the probability of an event occuring, s
 * [Documentation][survival_doc]
 * [Back to the top][lnk_top]
 
-#### k-Nearest Neighbors
+### k-Nearest Neighbors
 k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.
 
 ##### Metric Expression - Class returns the predicted class as a string
@@ -68,7 +68,7 @@ k-Nearest Neighbors (kNN) is a simple classification technique that is unique in
 * [Documentation][knn_doc]
 * [Back to the top][lnk_top]
 
-#### Neural Network
+### Neural Network
 Neural Network is an advanced machine learning classification technique wherein a model is constructed that aims to simulate the thought process performed by the human brain. A model consists of “neurons” that are interconnected by an activation function. Every record is then passed through the network from the appropriate input neuron to the proper output neuron through a series of weights and transformations defined by the activation function.
 
 ![nn_img]
@@ -81,7 +81,7 @@ Neural Network is an advanced machine learning classification technique wherein 
 * [Documentation][nn_doc]
 * [Back to the top][lnk_top]
 
-#### Naive Bayes
+### Naive Bayes
 Naïve Bayes is a simple classification technique wherein the Naïve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm then calculates the conditional likelihood of each potential class given the particular value for that variable and then multiplies those effects together to determine the probability for each class. The class with the highest probability is returned as the predicted class.
 
 ![nb_img]
@@ -94,7 +94,7 @@ Naïve Bayes is a simple classification technique wherein the Naïve assumption 
 * [Documentation][nb_doc]
 * [Back to the top][lnk_top]
 
-#### Random Forest
+### Random Forest
 Random Forest is an advanced classification technique wherein the training dataset is used to construct many independent decision trees. Every record is then passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
 
 ![rf_img]
@@ -107,7 +107,7 @@ Random Forest is an advanced classification technique wherein the training datas
 * [Documentation][rf_doc]
 * [Back to the top][lnk_top]
 
-#### Stepwise Logistic Regression - Probability returns the predicted probability for each record
+### Stepwise Logistic Regression - Probability returns the predicted probability for each record
 Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.
 
 ##### Metric Expression
@@ -116,7 +116,7 @@ Stepwise Linear Regression is a variant on classical Linear Regression in which 
 * [Documentation][steplogreg_doc]
 * [Back to the top][lnk_top]
 
-#### k-Means Clustering
+### k-Means Clustering
 Using the K-Means algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a central point, it's "mean".
 
 ![kcluster_img]
@@ -126,7 +126,7 @@ Using the K-Means algorithm, this analytic clusters records "by their nature" so
 * [Documentation][kcluster_doc]
 * [Back to the top][lnk_top]
 
-#### k-Medoids Clustering
+### k-Medoids Clustering
 Using the K-Medoids algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's "medoid".
 
 ![kmedoids_img]
@@ -139,7 +139,7 @@ Using the K-Medoids algorithm, this analytic clusters records "by their nature" 
 * [Documentation][kmedoids_doc]
 * [Back to the top][lnk_top]
 
-#### Pairwise Correlation
+### Pairwise Correlation
 PairwiseCorr measures the correlation between pairs of numeric variables to show how they behave with respect to each other. The primary output of this analytic is a correlation plot and a correlation table that contain the correlations of the variables when taken in pairs.
 
 ![pairwise_img]
