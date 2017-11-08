@@ -107,10 +107,10 @@ Random Forest is an advanced classification technique wherein the training datas
 * [Documentation][rf_doc]
 * [Back to the top][lnk_top]
 
-### Stepwise Logistic Regression - Probability returns the predicted probability for each record
+### Stepwise Logistic Regression
 Stepwise Linear Regression is a variant on classical Linear Regression in which variables are only included in the model if they have a significant effect.
 
-##### Metric Expression
+##### Metric Expression - Probability returns the predicted probability for each record
 `RScript<_RScriptFile="StepwiseLogistic.R", _InputNames="Target, Vars", _Params="FileName='StepwiseLogistic', Stepwise=TRUE">(Target, Vars)`
 * [RScript][steplogreg_script]
 * [Documentation][steplogreg_doc]
