@@ -11,7 +11,7 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 |                                      | [Stepwise Logistic Regression][steplogreg] |                                  |
 
 
-### ARIMA
+## ARIMA
 With time-based or time-series data, a common application of predictive analytics is forecasting. This method uses the Auto-Regressive Integrated with Moving Average (ARIMA) algorithm for forecasting future values. It leverages the “auto.arima” function from R’s “forecast” package to search through a variety of ARIMA configurations in order to find the best one. This script generates the forecasted value and confidence intervals, nominally set at 80% and 95%.
 
 ![arima_img]
@@ -29,7 +29,7 @@ With time-based or time-series data, a common application of predictive analytic
 * [Back to the top][lnk_top]
 
 
-### Seasonal Forecasting
+## Seasonal Forecasting
 With time-based or time-series data, a common application of predictive analytics is forecasting. This method uses R’s ordinary least squares regression algorithm to fit a function that captures the trend and seasonal variability of numerical data and can be used predict future values.
 
 ![seasforecast_img]
@@ -43,138 +43,137 @@ With time-based or time-series data, a common application of predictive analytic
 * [Back to the top][lnk_top]
 
 
-### Stepwise Regression
+## Stepwise Regression
 Stepwise linear regression is a variant on classical linear regression in which variables are only included in the model if they have a significant effect.
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Forecast returns the predictions from the model | `RScript<_RScriptFile="StepwiseRegression.R", _InputNames="Target, Vars", _Params="FileName='StepwiseRegression', Stepwise=TRUE">(Target, Vars)` |
+| Forecasted value | `RScript<_RScriptFile="StepwiseRegression.R", _InputNames="Target, Vars", _Params="FileName='StepwiseRegression', Stepwise=TRUE">(Target, Vars)` |
 
 * [RScript][stepreg_script]
 * [Documentation][stepreg_doc]
 * [Back to the top][lnk_top]
 
 
-### Survival Analysis
+## Survival Analysis
 Survival Analysis can be used to predict the probability of an event occuring, such as a component failure or a customer being lost. This script uses the Cox Regression algorithm to quantify the effect of each independent variable on the likelihood that an event will occur at some point in the future.
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Risk returns the risk of an event occurring relative to the average   | `RScript<_RScriptFile="Survival.R", _InputNames="Time, Status, Vars", _Params="TrainMode=FALSE, FileName='Survival'">(Time, Status, Vars)`|
+| Probability of an event occurring | `RScript<_RScriptFile="Survival.R", _InputNames="Time, Status, Vars", _Params="TrainMode=FALSE, FileName='Survival'">(Time, Status, Vars)`|
 
 * [RScript][survival_script]
 * [Documentation][survival_doc]
 * [Back to the top][lnk_top]
 
 
-### k-Nearest Neighbors
+## k-Nearest Neighbors
 k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Class returns the predicted class as a string | `RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)` |
-| ClassId returns the predicted class as a number   | `RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _OutputVar="ClassId", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)` |
+| Predicted class as a string | `RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)` |
+| Predicted class as a number   | `RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _OutputVar="ClassId", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)` |
 
 * [RScript][knn_script]
 * [Documentation][knn_doc]
 * [Back to the top][lnk_top]
 
 
-### Neural Networks
+## Neural Networks
 Neural Networks are an advanced machine learning technique inspired by the innerworkings of the human brain. A neural network consists of “neurons”, weights, and an activation function. Data is passed from each layer of the network to the output layer through a series of weights and transformations defined by the activation function.
 
 ![nn_img]
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Class returns the predicted class as a string | `RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)` |
-| ClassId returns the predicted class as a number | `RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)` |
+| Predicted class as a string | `RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)` |
+| Predicted class as a number | `RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)` |
 
 * [RScript][nn_script]
 * [Documentation][nn_doc]
 * [Back to the top][lnk_top]
 
 
-### Naive Bayes
+## Naive Bayes
 Naïve Bayes is a simple classification technique wherein the naïve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm calculates the conditional likelihood of each potential class given the particular value for that variable and multiplies the effects together to determine the probability of each class. The class with the highest probability is returned as the predicted class.
 
 ![nb_img]
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Class returns the predicted class as a string | `RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)` |
-| ClassId returns the predicted class as a number | `RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)` |
-
+| Predicted class as a string | `RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)` |
+| Predicted class as a number | `RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)` |
 
 * [RScript][nb_script]
 * [Documentation][nb_doc]
 * [Back to the top][lnk_top]
 
 
-### Random Forest
+## Random Forest
 Random Forest is a machine learning technique wherein numerous, independent decision trees are trained on randomized subsets of the training data. This is done to reduce overfitting. Data is passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
 
 ![rf_img]
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Class returns the predicted class as a string | `RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)` |
-| ClassId returns the predicted class as a number | `RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)`|
+| Predicted class as a string | `RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)` |
+| Predicted class as a number | `RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)`|
 
 * [RScript][rf_script]
 * [Documentation][rf_doc]
 * [Back to the top][lnk_top]
 
 
-### Stepwise Logistic Regression
+## Stepwise Logistic Regression
 Stepwise logistic regression is a variant on classical linear regression in which variables are only included in the final model if they have a significant effect.
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Probability returns the predicted probability for each record | `RScript<_RScriptFile="StepwiseLogistic.R", _InputNames="Target, Vars", _Params="FileName='StepwiseLogistic', Stepwise=TRUE">(Target, Vars)` |
+| Probability of the target class | `RScript<_RScriptFile="StepwiseLogistic.R", _InputNames="Target, Vars", _Params="FileName='StepwiseLogistic', Stepwise=TRUE">(Target, Vars)` |
 
 * [RScript][steplogreg_script]
 * [Documentation][steplogreg_doc]
 * [Back to the top][lnk_top]
 
 
-### k-Means Clustering
+## k-Means Clustering
 Using the k-Means algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a central point, it's "mean".
 
 ![kcluster_img]
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Cluster returns the cluster to which the record belongs | `RScript<_RScriptFile="kMeansClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
+| Cluster to which each record belongs | `RScript<_RScriptFile="kMeansClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
 
 * [RScript][kcluster_script]
 * [Documentation][kcluster_doc]
 * [Back to the top][lnk_top]
 
 
-### k-Medoids Clustering
+## k-Medoids Clustering
 Using the k-Medoids algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's "medoid".
 
 ![kmedoids_img]
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Cluster returns the cluster to which the record belongs | `RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
-| Medoids returns the cluster if a record is the medoid of that cluster, 0 otherwise | `RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _OutputVar="Medoids", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
+| Cluster to which each record belongs | `RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
+| Cluster if a record is the medoid of that cluster, 0 otherwise | `RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _OutputVar="Medoids", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
 
 * [RScript][kmedoids_script]
 * [Documentation][kmedoids_doc]
 * [Back to the top][lnk_top]
 
 
-### Pairwise Correlation
+## Pairwise Correlation
 Pairwise correlation measures the correlation between pairs of metrics to show how they behave with respect to each other. The primary output is a correlation plot and a correlation table containing correlations of the variables when taken in pairs.
 
 ![pairwise_img]
 
 | Output | MicroStrategy Metric Expression |
 | ------ | ------------------------------- |
-| Result returns "Ok" when the correlations were calculated with no errors | `RScript<_RScriptFile="PairwiseCorr.R", _InputNames="Labels, Vars", _Params="HasLabels=TRUE, WindowSize=0, ImageName='PairwiseCorr', FileName='PairwiseCorr'">(Labels, Vars)` |
+| Correlation matrix plot | `RScript<_RScriptFile="PairwiseCorr.R", _InputNames="Labels, Vars", _Params="HasLabels=TRUE, WindowSize=0, ImageName='PairwiseCorr', FileName='PairwiseCorr'">(Labels, Vars)` |
 
 * [RScript][pairwise_script]
 * [Documentation][pairwise_doc]
