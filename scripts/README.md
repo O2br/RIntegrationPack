@@ -3,7 +3,7 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 
 #### Contents
 | Forecasting                          | Classification                             | Descriptive                      |
-| ------------------------------------ | ------------------------------------------ | -------------------------------- |
+| :----------------------------------- | :----------------------------------------- | :------------------------------- |
 | [ARIMA][arima]                       | [k-Nearest Neighbors][knn]                 | [k-Means Clustering][kcluster]   |
 | [Seasonal Forecasting][seasforecast] | [Neural Network][nn]                       | [k-Medoids Clustering][kmedoids] |
 | [Stepwise Regression][stepreg]       | [Naive Bayes][nb]                          | [Pairwise Correlation][pairwise] |
@@ -17,7 +17,7 @@ With time-based or time-series data, a common application of predictive analytic
 ![arima_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Forecasted value | `RScript<_RScriptFile="ARIMA.R", _InputNames="Target", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)` |
 | First value of the lower confidence band | `RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)` |
 | Second value of the lower confidence band | `RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)`|
@@ -35,7 +35,7 @@ Using the k-Means algorithm, this analytic clusters records "by their nature" so
 ![kcluster_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Cluster to which each record belongs | `RScript<_RScriptFile="kMeansClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
 
 * [RScript][kcluster_script]
@@ -49,7 +49,7 @@ Using the k-Medoids algorithm, this analytic clusters records "by their nature" 
 ![kmedoids_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Cluster to which each record belongs | `RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
 | Cluster if a record is the medoid of that cluster, 0 otherwise | `RScript<_RScriptFile="kMedoidsClustering.R", _InputNames="Vars", _OutputVar="Medoids", _Params="Exact_k=4, Max_k=10, FileName='', Seed=42">(Vars)` |
 
@@ -62,7 +62,7 @@ Using the k-Medoids algorithm, this analytic clusters records "by their nature" 
 k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Predicted class as a string | `RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)` |
 | Predicted class as a number   | `RScript<_RScriptFile="kNN.R", _InputNames="ID, Target, Training, Vars", _OutputVar="ClassId", _Params="TrainIncluded=TRUE, k=1, FileName='kNN', Seed=42">(ID, Target, Training, Vars)` |
 
@@ -77,7 +77,7 @@ Naïve Bayes is a simple classification technique wherein the naïve assumption 
 ![nb_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Predicted class as a string | `RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)` |
 | Predicted class as a number | `RScript<_RScriptFile="NaiveBayes.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='NaiveBayes', Correction=1">(Target, Vars)` |
 
@@ -92,7 +92,7 @@ Neural Networks are an advanced machine learning technique inspired by the inner
 ![nn_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Predicted class as a string | `RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)` |
 | Predicted class as a number | `RScript<_RScriptFile="NeuralNetwork.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="FileName='NeuralNetwork', TrainMode=TRUE, NumLayer=3, Seed=42">(Target, Vars)` |
 
@@ -107,7 +107,7 @@ Pairwise correlation measures the correlation between pairs of metrics to show h
 ![pairwise_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Correlation matrix plot | `RScript<_RScriptFile="PairwiseCorr.R", _InputNames="Labels, Vars", _Params="HasLabels=TRUE, WindowSize=0, ImageName='PairwiseCorr', FileName='PairwiseCorr'">(Labels, Vars)` |
 
 * [RScript][pairwise_script]
@@ -121,7 +121,7 @@ Random Forest is a machine learning technique wherein numerous, independent deci
 ![rf_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Predicted class as a string | `RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)` |
 | Predicted class as a number | `RScript<_RScriptFile="RandomForest.R", _InputNames="Target, Vars", _OutputVar="ClassId", _Params="TrainMode=TRUE, FileName='RandomForest', NumTree=750, NumVar=3, Seed=42">(Target, Vars)`|
 
@@ -136,7 +136,7 @@ With time-based or time-series data, a common application of predictive analytic
 ![seasforecast_img]
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Forecasted value | `RScript<_RScriptFile="SeasonalForecasting.R", _InputNames="Target, Trend, Season", _Params="FileName=''">(Target, Trend, Season)` |
 
 * [RScript][seasforecast_script]
@@ -148,7 +148,7 @@ With time-based or time-series data, a common application of predictive analytic
 Stepwise linear regression is a variant on classical linear regression in which variables are only included in the model if they have a significant effect.
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Forecasted value | `RScript<_RScriptFile="StepwiseRegression.R", _InputNames="Target, Vars", _Params="FileName='StepwiseRegression', Stepwise=TRUE">(Target, Vars)` |
 
 * [RScript][stepreg_script]
@@ -160,7 +160,7 @@ Stepwise linear regression is a variant on classical linear regression in which 
 Stepwise logistic regression is a variant on classical linear regression in which variables are only included in the final model if they have a significant effect.
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Probability of the target class | `RScript<_RScriptFile="StepwiseLogistic.R", _InputNames="Target, Vars", _Params="FileName='StepwiseLogistic', Stepwise=TRUE">(Target, Vars)` |
 
 * [RScript][steplogreg_script]
@@ -172,7 +172,7 @@ Stepwise logistic regression is a variant on classical linear regression in whic
 Survival Analysis can be used to predict the probability of an event occuring, such as a component failure or a customer being lost. This script uses the Cox Regression algorithm to quantify the effect of each independent variable on the likelihood that an event will occur at some point in the future.
 
 | Output | MicroStrategy Metric Expression |
-| ------ | ------------------------------- |
+| :----- | :------------------------------ |
 | Probability of an event occurring | `RScript<_RScriptFile="Survival.R", _InputNames="Time, Status, Vars", _Params="TrainMode=FALSE, FileName='Survival'">(Time, Status, Vars)`|
 
 * [RScript][survival_script]
