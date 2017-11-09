@@ -28,7 +28,7 @@ With time-based or time-series data, a common application of predictive analytic
 * [RScript][arima_script]
 * [Documentation][arima_doc]
 * [Back to the top][lnk_top]
-
+<br></br>
 
 ## k-Means Clustering
 
@@ -43,6 +43,7 @@ Using the k-Means algorithm, this analytic clusters records "by their nature" so
 * [RScript][kcluster_script]
 * [Documentation][kcluster_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## k-Medoids Clustering
@@ -59,6 +60,7 @@ Using the k-Medoids algorithm, this analytic clusters records "by their nature" 
 * [RScript][kmedoids_script]
 * [Documentation][kmedoids_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## k-Nearest Neighbors
@@ -72,6 +74,7 @@ k-Nearest Neighbors (kNN) is a simple classification technique that is unique in
 * [RScript][knn_script]
 * [Documentation][knn_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Naive Bayes
@@ -88,6 +91,7 @@ Naïve Bayes is a simple classification technique wherein the naïve assumption 
 * [RScript][nb_script]
 * [Documentation][nb_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Neural Networks
@@ -104,6 +108,7 @@ Neural Networks are an advanced machine learning technique inspired by the inner
 * [RScript][nn_script]
 * [Documentation][nn_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Pairwise Correlation
@@ -119,6 +124,7 @@ Pairwise correlation measures the correlation between pairs of metrics to show h
 * [RScript][pairwise_script]
 * [Documentation][pairwise_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Random Forest
@@ -135,6 +141,7 @@ Random Forest is a machine learning technique wherein numerous, independent deci
 * [RScript][rf_script]
 * [Documentation][rf_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Seasonal Forecasting
@@ -150,6 +157,7 @@ With time-based or time-series data, a common application of predictive analytic
 * [RScript][seasforecast_script]
 * [Documentation][seasforecast_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Stepwise Regression
@@ -162,6 +170,7 @@ Stepwise linear regression is a variant on classical linear regression in which 
 * [RScript][stepreg_script]
 * [Documentation][stepreg_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Stepwise Logistic Regression
@@ -174,6 +183,7 @@ Stepwise logistic regression is a variant on classical linear regression in whic
 * [RScript][steplogreg_script]
 * [Documentation][steplogreg_doc]
 * [Back to the top][lnk_top]
+<br></br>
 
 
 ## Survival Analysis
@@ -186,7 +196,7 @@ Survival Analysis can be used to predict the probability of an event occuring, s
 * [RScript][survival_script]
 * [Documentation][survival_doc]
 * [Back to the top][lnk_top]
-
+<br></br>
 
 
 ## How to use these scripts in a MicroStrategy dashboard
