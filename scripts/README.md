@@ -16,6 +16,9 @@ With time-based or time-series data, a common application of predictive analytic
 
 ![arima_img]
 
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_ARIMA.png" width="250">
+
+
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
 | Forecasted value | `RScript<_RScriptFile="ARIMA.R", _InputNames="Target", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)` |
@@ -33,6 +36,7 @@ With time-based or time-series data, a common application of predictive analytic
 Using the k-Means algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a central point, it's "mean".
 
 ![kcluster_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMeans.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -47,6 +51,7 @@ Using the k-Means algorithm, this analytic clusters records "by their nature" so
 Using the k-Medoids algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's "medoid".
 
 ![kmedoids_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMedoids.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -75,6 +80,7 @@ k-Nearest Neighbors (kNN) is a simple classification technique that is unique in
 Naïve Bayes is a simple classification technique wherein the naïve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm calculates the conditional likelihood of each potential class given the particular value for that variable and multiplies the effects together to determine the probability of each class. The class with the highest probability is returned as the predicted class.
 
 ![nb_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NaiveBayes.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -90,6 +96,7 @@ Naïve Bayes is a simple classification technique wherein the naïve assumption 
 Neural Networks are an advanced machine learning technique inspired by the innerworkings of the human brain. A neural network consists of “neurons”, weights, and an activation function. Data is passed from each layer of the network to the output layer through a series of weights and transformations defined by the activation function.
 
 ![nn_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NeuralNetwork.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -105,6 +112,7 @@ Neural Networks are an advanced machine learning technique inspired by the inner
 Pairwise correlation measures the correlation between pairs of metrics to show how they behave with respect to each other. The primary output is a correlation plot and a correlation table containing correlations of the variables when taken in pairs.
 
 ![pairwise_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_PairwiseCorr.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -119,6 +127,7 @@ Pairwise correlation measures the correlation between pairs of metrics to show h
 Random Forest is a machine learning technique wherein numerous, independent decision trees are trained on randomized subsets of the training data. This is done to reduce overfitting. Data is passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
 
 ![rf_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_RandomForest.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -134,6 +143,7 @@ Random Forest is a machine learning technique wherein numerous, independent deci
 With time-based or time-series data, a common application of predictive analytics is forecasting. This method uses R’s ordinary least squares regression algorithm to fit a function that captures the trend and seasonal variability of numerical data and can be used predict future values.
 
 ![seasforecast_img]
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SeasonalForecast.PNG" width="250">
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
