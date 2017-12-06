@@ -2,6 +2,7 @@
 * [Windows (MicroStrategy Desktop 10 and later][win10]
 * [Windows (MicroStrategy Desktop 9 and earlier][win9]
 * [Mac][mac]
+* [Linux](linux)
 * [AIX][aix]
 * [SunOS][sunos]
 * [Win9_220][win9220]
@@ -57,3 +58,4 @@ $HOME/RIntegrationPack (for non-root user)
 [aix]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack_AIX.tar.gz>
 [sunos]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack_SunOS.tar.gz>
 [win9220]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack.msi>
+[linux]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack_Linux.tar.gz>
