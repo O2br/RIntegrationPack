@@ -1,4 +1,4 @@
-#### Installers for supported operating systems
+#### Download the installer for your operating system
 * [Windows (MicroStrategy Desktop 10 and later)][win10]
 * [Windows (MicroStrategy Desktop 9 and earlier)][win9]
 * [Mac][mac]
