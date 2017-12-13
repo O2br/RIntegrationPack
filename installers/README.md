@@ -1,6 +1,6 @@
 #### Installers for supported operating systems
-* [Windows (MicroStrategy Desktop 10 and later][win10]
-* [Windows (MicroStrategy Desktop 9 and earlier][win9]
+* [Windows (MicroStrategy Desktop 10 and later)][win10]
+* [Windows (MicroStrategy Desktop 9 and earlier)][win9]
 * [Mac][mac]
 * [Linux](linux)
 * [AIX][aix]
@@ -52,10 +52,10 @@ $HOME/RIntegrationPack (for non-root user)
 
 
 
-[mac]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/R%20Integration%20Pack.pkg>
-[win9]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack.msi>
-[win10]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack64.msi>
-[aix]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack_AIX.tar.gz>
-[sunos]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack_SunOS.tar.gz>
-[win9220]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack.msi>
-[linux]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/installers/RIntegrationPack_Linux.tar.gz>
+[mac]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/R%20Integration%20Pack.pkg>
+[win9]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack.msi>
+[win10]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack64.msi>
+[aix]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack_AIX.tar.gz>
+[sunos]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack_SunOS.tar.gz>
+[win9220]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack.msi>
+[linux]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack_Linux.tar.gz>
