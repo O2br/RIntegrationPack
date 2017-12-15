@@ -1,6 +1,7 @@
 #### Download the installer for your operating system
 * New! [Windows Desktop and Workstation 10.10][win10.10]
 * New! [Mac Desktop and Workstation 10.10][mac10.10]
+* New! [MicroStrategy 10.10 Platform on Windows][platform10.10]
 * [Windows (MicroStrategy Desktop 10 and later)][win10]
 * [Windows (MicroStrategy Desktop 9 and earlier)][win9]
 * [Mac][mac]
@@ -63,3 +64,4 @@ $HOME/RIntegrationPack (for non-root user)
 [linux]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack_Linux.tar.gz>
 [win10.10]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack64%20-%20Windows%2010.10.msi>
 [mac10.10]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/R%20Integration%20Pack%20-%20Mac%2010.10.pkg>
+[platform10.10]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack%20-%20Windows%2010.10.msi>
