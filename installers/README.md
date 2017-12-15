@@ -1,6 +1,6 @@
 #### Download the installer for your operating system
-* New! [Windows Desktop and Workstation 10.10][win10.10]
 * New! [Mac Desktop and Workstation 10.10][mac10.10]
+* New! [Windows Desktop and Workstation 10.10][win10.10]
 * New! [MicroStrategy 10.10 Platform on Windows][platform10.10]
 * [Windows (MicroStrategy Desktop 10 and later)][win10]
 * [Windows (MicroStrategy Desktop 9 and earlier)][win9]
