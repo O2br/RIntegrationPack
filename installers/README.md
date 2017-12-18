@@ -1,14 +1,13 @@
 #### Download the installer for your operating system
-* New! [Mac Desktop and Workstation 10.10][mac10.10]
-* New! [Windows Desktop and Workstation 10.10][win10.10]
-* New! [MicroStrategy 10.10 Platform on Windows][platform10.10]
-* [Windows (MicroStrategy Desktop 10 and later)][win10]
-* [Windows (MicroStrategy Desktop 9 and earlier)][win9]
-* [Mac][mac]
+* New! [MicroStrategy Desktop 10.10 and Workstation 10.10 for Mac][mac10.10]
+* New! [MicroStrategy Desktop 10.10 and Workstation 10.10 for Windows][win10.10]
+* New! [MicroStrategy Platform 10.10 for Windows][platform10.10]
+* [MicroStategy Desktop 10.9 and earlier for Mac][mac]
+* [MicroStrategy Desktop 10.0 to 10.9 for Windows][win10]
+* [MicroStrategy Desktop 9 and earlier for Windows][win9]
 * [Linux](linux)
 * [AIX][aix]
 * [SunOS][sunos]
-* [MicroStrategy 10.9 (and earlier) Platform on Windows][win9220]
 
 
 
