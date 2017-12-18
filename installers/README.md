@@ -2,7 +2,7 @@
 * New! [MicroStrategy Desktop 10.10 and Workstation 10.10 for Mac][mac10.10]
 * New! [MicroStrategy Desktop 10.10 and Workstation 10.10 for Windows][win10.10]
 * New! [MicroStrategy Platform 10.10 for Windows][platform10.10]
-* [MicroStategy Desktop 10.9 and earlier for Mac][mac]
+* [MicroStategy Desktop 10.8 and earlier for Mac][mac]
 * [MicroStrategy Desktop 10.0 to 10.9 for Windows][win10]
 * [MicroStrategy Desktop 9 and earlier for Windows][win9]
 * [Linux](linux)
