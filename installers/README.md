@@ -8,7 +8,7 @@
 * [Linux](linux)
 * [AIX][aix]
 * [SunOS][sunos]
-* [Win9_220][win9220]
+* [MicroStrategy 10.9 (and earlier) Platform on Windows][win9220]
 
 
 
