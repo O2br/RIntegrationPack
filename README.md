@@ -1,7 +1,7 @@
 # MicroStrategy R Integration Pack
 #### Quick Links
 * [R Integration Pack User Guide][user_guide]
-* [Scripts you can use in MicroStrategy dashboards][scripts]
+* [Ready-to-use R analytics scripts][scripts]
 * [MicroStrategy R Package on CRAN][cran]
 * [MicroStrategy Community - Support, examples, and more][mstr_community]
 * [Installation](https://github.com/MicroStrategy/RIntegrationPack/tree/master/installers)
@@ -53,7 +53,7 @@ Delivering results from R to any BI User is what the R Integration Pack is all a
 [img2]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Install-Deploy-NoNum.png
 [img3]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Develop-NoNum.png
 
-[user_guide]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/docs/Documentation_RIntegrationPackUserGuide.pdf>
+[user_guide]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/docs/Documentation_RIntegrationPackUserGuide.pdf>
 [scripts]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts>
 [cran]: <https://cran.r-project.org/package=MicroStrategyR>
 [mstr_community]: <https://community.microstrategy.com/s/topic/0TO44000000Flk7GAC/r-script-u108>
