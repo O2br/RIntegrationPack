@@ -7,7 +7,7 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 | [ARIMA][arima]                       | [k-Nearest Neighbors][knn]                 | [k-Means Clustering][kcluster]   |
 | [Seasonal Forecasting][seasforecast] | [Neural Network][nn]                       | [k-Medoids Clustering][kmedoids] |
 | [Stepwise Regression][stepreg]       | [Naive Bayes][nb]                          | [Pairwise Correlation][pairwise] |
-| [Survival Analysis][survival]        | [Random Forest][rf]                        |                                  |
+| [Survival Analysis][survival]        | [Random Forest][rf]                        | [Sentiment Analysis][sentiment]  |
 |                                      | [Stepwise Logistic Regression][steplogreg] |                                  |
 
 
@@ -160,6 +160,36 @@ With time-based or time-series data, a common application of predictive analytic
 <br></br>
 
 
+## Sentiment Analysis
+
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SentimentAnalysis.png" width="250">
+
+Sentiment analysis aims to measure the attitude of a writer’s words within a given text. It is an application of text mining and is used to extract sentiment from social media sources such as survey results, Twitter tweets, and Facebook comments. This analytic uses R’s tidytext package to analyze text for sentiment by associating each word with classifications from two lexicons and returns the sentiment analyses as 14 different results, each can be represented by a MicroStrategy metric. In addition to these results which are returned “in-band” to MicroStrategy metrics in a report, dashboard or document, this analytic optionally can persist output “out-of-band” to the file system, including a result table as a comma-separated-value file, a word cloud and a sentiment score histogram.
+
+| Output | MicroStrategy Metric Expression |
+| :----- | :------------------------------ |
+| Sentiment Score (numeric, negative/positive) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)` |
+| Sentiment Grade (string, negative/positive) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)` |
+| Anger (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)` |
+| Anger (numeric, word count) |	`RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)` | 
+| Anticipation (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`| 
+| Disgust (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|	
+| Fear (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`| 
+| Joy (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+| Negative (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+| Positive (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+| Sadness (numeric, word count)	| `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`| 
+| Surprise (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+| Trust (numeric, word count) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+| WordCount (numeric, words with sentiment)	| `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+| TotalWordCount (numeric, all words) | `RScript<_RScriptFile="SentimentAnalysis.R", _InputNames="Text", _OutputVar="Grade", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)`|
+
+* [RScript][sentiment_script]
+* [Documentation][sentiment_doc]
+* [Back to the top][lnk_top]
+<br></br>
+
+
 ## Stepwise Regression
 Stepwise linear regression is a variant on classical linear regression in which variables are only included in the model if they have a significant effect.
 
@@ -271,5 +301,10 @@ This page provides programming examples.  MicroStrategy grants you a nonexclusiv
 [survival_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_Survival.R>
 [survival_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_Survival.pdf>
 [survival_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Survival.PNG
+
+[sentiment]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#sentiment-analysis>
+[sentiment_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SentimentAnalysis.R>
+[sentiment_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SentimentAnalysis.pdf>
+[sentiment_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SentimentAnalysis.png
 
 [img_howtouse]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Params3.png
