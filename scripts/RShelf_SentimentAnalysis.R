@@ -20,8 +20,9 @@
 #RVAR Sadness -output -string -vector          # Metric Expression: RScriptU<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="Sadness", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
 #RVAR Surprise -output -string -vector         # Metric Expression: RScriptU<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="Surprise", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
 #RVAR Trust -output -string -vector            # Metric Expression: RScriptU<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="Trust", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
-#RVAR WordCount -output -numeric -vector       # Metric Expression: RScript<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="WordCount", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
-#RVAR TotalWordCount -output -numeric -scalar  # Metric Expression: RScriptAgg<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="TotalWordCount", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
+#RVAR TotalWords -output -numeric -vector      # Metric Expression: RScriptU<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="TotalWords", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
+#RVAR WordCount -output -numeric -vector       # Metric Expression: RScriptU<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="WordCount", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
+#RVAR WordScore -output -numeric -vector       # Metric Expression: RScriptU<[_RScriptFile]="SentimentAnalysis.R", [_OutputVar]="WordScore", _Params="FileName='SA_mstr', PlotWordCloud=TRUE, PlotHistogram=TRUE, RemoveRetweets=TRUE, SaveCSV=TRUE">(Text)
 #
 #MICROSTRATEGY_END
 
@@ -30,6 +31,8 @@ mstr.ErrMsg<-tryCatch({
   timer0 <- proc.time()                                        #Start a timer to measure duration of this execution
 
   ripEnv <- environment()                                      # Remember the R environment of this execution
+
+  # save(list=ls(), file="SA.Rdata")
 
   ###################
   ###  FUNCTIONS  ###
@@ -99,47 +102,43 @@ mstr.ErrMsg<-tryCatch({
     } else {
       words <- tblText
     }
+    stopWords <- setdiff(stop_words$word,
+                         intersect(stop_words$word,
+                                   tblLexicon$word))           # Exclude stop words that have sentiment
     words <-  words %>%                                        # Start with the input text
       unnest_tokens(word, Text, token = "regex",
                     pattern = reg) %>%                         # Break the text into words
-      dplyr::filter(!word %in% stop_words$word,
+      # dplyr::filter(!word %in% stop_words$word,
+      dplyr::filter(!word %in% c("rt", stopWords),
                     str_detect(word, "[a-z]")) %>%             # Remove any stop words
-      select(word, id)                                           # Return the words along with the id of the Text the word belongs to
+      select(word, Id)                                           # Return the words along with the Id of the Text the word belongs to
     LogTask(paste0(funcName, " - Finshed (",format((proc.time() - timer)[3], nsmall=3), "sec)"))
-    return(words)
+    return(words[, c("Id", "word")])
   } #END-GetWords
 
-  ### Function:  GetNrc
-  ###            Convert the tidytext package's nrc lexicon of 14K english words into a table of words and which of 10 sentiments are present
-  ###            The nrc lexicon has the following sentiments for each word (each word may have one or more of these indicated):
-  ###              trust, fear, negative, sadness, anger, surprise, positive, disgust, joy, anticipation
-  GetNrc <- function() {
-    timer <- proc.time(); funcName <- "GetNrc"
+  ### Function:  GetLexicon
+  ###            Convert the tidytext package's sentiments of english words into a table of words with of 10 sentiments plus a score
+  GetLexicon <- function() {
+    timer <- proc.time(); funcName <- "GetLexicon"
     LogTask(paste0(funcName, " - Started..."))
-    tblNrc <- tidytext::sentiments %>%                         # Using the sentiments from the tidytext package
-      dplyr::filter(lexicon == "nrc") %>%                      # Filter rows to include only words from the nrc lexicon
-      dplyr::select(word, sentiment) %>%                       # Select only the word and sentiment columns
-      dplyr::mutate(qty=1) %>%                                 # Add a quantiy column where the quantity of each word is 1
-      spread(sentiment, qty, fill=0)                           # Convert the sentiment column to a set of binary indicator columns for each sentiment elements where 1 indicates a word has that sentiment and is 0 otherwise
+    tblLex <- sentiments %>%                                      # Get sentiments table from tidytext package
+      filter(!(lexicon=="AFINN")) %>%                          # First, process sentiments from the non AFINN lexicons (nrc & bing)
+      select(word, sentiment) %>%                              # Get the words and their sentiments
+      distinct() %>%                                           # Delete any duplicate rows (when the same word-sentiment appears in more than one lexicon)
+      mutate(qty=1) %>%                                        # Add the word count qty
+      group_by(word, sentiment) %>%                            # Group by word and sentiment
+      summarize(qty=max(qty)) %>%                              # Aggregate so each row is a unique word
+      ungroup() %>%                                            # Ungroup the table
+      spread(sentiment, qty, fill=0) %>%                       # Spread the sentiment column in the a column for each sentiment
+      full_join(sentiments %>% filter(lexicon=="AFINN") %>%
+                  select(word, score))                         # Join in the words from the AFINN lexicon along with their scores
+    x <- is.na(tblLex$score)                                      # Find all words with no score
+    tblLex$score[x] <- 2*(tblLex$positive[x] - tblLex$negative[x])      # For words with no score, set score using positive / negative
+    colnames(tblLex)[match("score", colnames(tblLex))] <- "WordScore"# Rename score to WordScore (since Score is that average of the WordScores for each text element)
+    colOrder <- c("word", "WordScore", "positive", "negative", "anger", "anticipation", "disgust", "fear", "joy", "sadness", "surprise", "trust")
     LogTask(paste0(funcName, " - Finshed (",format((proc.time() - timer)[3], nsmall=3), "sec)"))
-    return(tblNrc)                                             # Return the ncr lexicon table
-  } #END-GetNrc
-
-  ### Function:  GetAFINN
-  ###            Convert the tidytext package's AFINN lexicon of 5K english words into a table of words and a measure of their positive/negative polarity score
-  ###            The AFINN lexicon has the following scores of positive/negative poliarity for each word (each word has a single score):
-  ###              -5 = Extremely Negative, -4 = Very Negative, -3 = Negative, -2 = Slightly Negative, -1 = Slightly Negative,
-  ###               0 = Neutral,
-  ###              +1 = Slightly Positive, +2 = Slightly Positive, +3 = Positive, +4 = Very Positive, +5 = Extremely Positive
-  GetAFINN <- function() {
-    timer <- proc.time(); funcName <- "GetAFINN"
-    LogTask(paste0(funcName, " - Started..."))
-    tblAFINN <- tidytext::sentiments %>%                       # Using the sentiments from the tidytext package
-      dplyr::filter(lexicon == "AFINN") %>%                    # Filter rows to include only words from the AFINN lexicon
-      dplyr::select(word, score)                               # Select only the word and score columns
-    LogTask(paste0(funcName, " - Finshed (",format((proc.time() - timer)[3], nsmall=3), "sec)"))
-    return(tblAFINN)                                           # Return the AFINN lexicon table
-  } #END-GetAFINN
+    return(tblLex[, colOrder])                                    # Return the lexicon table
+  } #END-GetLexicon
 
   ### Function:  WordCloud Plotter
   WordCloudPlotter <- function(word, n, minFreg=2, maxWords=100, colors=brewer.pal(9, "RdBu"), rotPer=.1) {
@@ -192,55 +191,82 @@ mstr.ErrMsg<-tryCatch({
 
   ### Prepare Text and Analyze Sentiments
   LogTask("Analyzing Sentiment")
-  tblText <- tbl_df(data.frame(id=seq(1, length(Text)),
+  tblLexicon <- GetLexicon()                                   # Get the Lexicon table with words and their sentiments/scores
+  tblText <- tbl_df(data.frame(Id=seq(1, length(Text)),
                                Text=Text,
-                               stringsAsFactors=FALSE))        # Convert add an id for each Text element and save to a table
+                               stringsAsFactors=FALSE))        # Convert add an Id for each Text element and save to a table
   tblWords <- GetWords(tblText)                                # Get the words
-  tblLexicon <- left_join(GetNrc(), GetAFINN(), by="word")     # Combine the ncr and AFINN into a single lexicon table
-  tblLexicon[is.na(tblLexicon)] <- 0                           # Replace any NAs with 0
-  tblSents <- left_join(tblText,                               # Join the table of input text (on rows) with
-              left_join(tblWords, tblLexicon, by="word") %>%   #   Join the table of words and the lexicon table
-                     dplyr::group_by(id) %>%                   #     Group words by input text row id
-                     dplyr::select(-word) %>%                  #     Remove the word column so we can sum up the sentiments
-                     dplyr::summarize_each(funs(sum,
-                                                "sum",
-                                                sum(.,
-                                                    na.rm=TRUE))),
-                    by="id")                                   # Aggregate the sentiments for each text row
-  tblSents[is.na(tblSents)] <- 0                               # Replace any NAs with 0
+  tblSentsWords <- left_join(tblText %>%
+                               mutate(WordCount=1),            # Join the table of input text (on rows) with
+                            left_join(tblWords, tblLexicon,
+                                      by="word"))              #  The table of words and the lexicon table
+  tblText$TotalWords <- sapply(seq_along(tblText$Id), FUN=function(i) {
+    length(which(tblSentsWords$Id==tblText$Id[i]))
+  })                                                           #  Get the number of words left after stop words/etc are removed
+  hasSent <- apply(tblSentsWords[, -c(1:4)], 1, FUN=function(x) {
+    !all(is.na(x))
+  })                                                           # Find all rows with words that didn't match any in the Lexicon
+  tblSentsWords <- tblSentsWords[hasSent, ] %>%
+                     group_by(Id, Text, word) %>%
+                     summarise_each(funs(sum)) %>%
+                     ungroup()                                 # Remove non-sentiment word/rows and aggregate (when on word appears more than once in an element)
 
-  ### Count Words
-  LogTask("Counting Words")
-  tblWordCount <- count_(tblWords, "word")                     # Create a table that tallies the count of each word
-  WordCount <-  sapply(unique(tblSents$id), FUN=function(id) { # Count the words in each Text id
-    return(nrow((tblWords[tblWords$id==id, ])))
-  })
-  totalWordCount <- sum(WordCount)                             # Get the total count of words from all ids
+  tblSentsWords[is.na(tblSentsWords)] <- 0                     # Replace any NA with 0
 
-  ### Assign text "grades" from positive/negative polarity scores
+  tblSents <- tblSentsWords %>% group_by(Id, Text) %>%         # Build the final output table
+    select(-word) %>%
+    summarise_each(funs(sum)) %>%
+    ungroup() %>%
+    mutate(Score=WordScore/WordCount) %>%                 # Aggregate (when on word appears more than once in an element)
+    left_join(tblText %>% select(Id, TotalWords))
+
   LogTask("Assigning Grades")
   GRADES <- c("Extremely Negative", "Very Negative",
               "Negative", "Somewhat Negative", "Slightly Negative",
               "Neutral",
               "Slightly Positive", "Somewhat Positive", "Positive",
-              "Very Positive", "Extremely Positive")           # Provide text descriptions, a grade for each AFINN positive/negative polarity sentiment measure
-  Grade <- sapply(tblSents$score_sum, FUN=function(x) {        # Assign a grade to each Text id
-    GRADES[round(max(min(x, 5), -5))+6]
-  })
+              "Very Positive", "Extremely Positive",
+              "Barely Negative", "Barely Positive")            # Provide text descriptions, a grade for each AFINN positive/negative polarity sentiment measure
+  tblSents$Grade <- GRADES[sapply(tblSents$Score,
+                                  FUN=function(x) {            # Assign a grade to each Text Id
+    grd= round(max(min(x, 5), -5))+6                           # Map numeric Score to the text grades
+    grd=ifelse((x<0.5)&(x>0.1), 13,
+               ifelse((x>=(-0.5))&(x<(-0.1)), 12, grd))        # Handle so "Neutral" is only -0,1 to +0.1
+  })]                                                          # Assign text grade
+  colOrder <- c("Id", "Text", "TotalWords", "WordCount", "WordScore", "Score", "Grade", "positive", "negative",
+                "anger", "anticipation", "disgust", "fear", "joy", "sadness",
+                "surprise", "trust")
+  tblSents <- tblSents[, colOrder]                              # Put the columns in the preferred order
+
+  tblSentsWords <- rbind(tblSentsWords %>% mutate(Score=0,  Grade=""),
+                         tblSents %>% select(-TotalWords) %>%
+                           mutate(word="*Total"))              # Add the text element level results to the text-word results
+  tblSentsWords <- tblSentsWords[order(tblSentsWords$Id,
+                                       tblSentsWords$word), ]  # Sort in order of Id and Word
 
   ### Build final dataset with sentiments, positive/negative polarity scores & grades, plus word counts
   ### and ensure variable names start with capital letters and the rest lower case
   LogTask("Preparing Outputs")
-    tblSents <- cbind(tblSents,
-                      Grade=as.character(Grade), WordCount)    # Combine Grade and WordCount with the table of Sentiments
+  # tblSents <- cbind(tblSents,
+  #                     Grade=as.character(Grade), WordCount)    # Combine Grade and WordCount with the table of Sentiments
   colnames(tblSents)[-c(1, 2, 14, 15)] <- sapply(colnames(tblSents)[-c(1, 2, 14, 15)],
                                FUN=function(n) {               # For each column in the table of sentiments
     x <- sub("_sum", "", n)                                    #   Remove any "_sum" suffix from column names (added during "summarize_each")
+
     x <- paste0(toupper(substr(x, 1, 1)),
-                tolower(substr(x, 2, nchar(x))))               #   Capitialize the only the first character of the column name
-    assign(x, tblSents[, n], ripEnv)                           #   Add this column as an output variable in the environment
+                substr(x, 2, nchar(x)))                        #   Capitialize the only the first character of the column name
+
+    assign(x, unname(unlist(tblSents[, n])), ripEnv)           #   Add this column as an output variable in the environment
     return(x)
   })
+
+  ### Count Words
+  LogTask("Counting Words")
+  tblWordCount <- count_(tblWords, "word")                     # Create a table that tallies the count of each word
+  WordCount <-  sapply(unique(tblSents$Id), FUN=function(Id) { # Count the words in each Text id
+    return(nrow((tblWords[tblWords$Id==Id, ])))
+  })
+  totalWordCount <- sum(WordCount)                             # Get the total count of words from all ids
 
   ### Return Out-of-Band byproducts:  WordCloud, Histogram, Dataset CSV, and .Rdata of the environment
   LogTask("Returning Out-of-Band Byproducts")
@@ -267,6 +293,8 @@ mstr.ErrMsg<-tryCatch({
     tryCatch({
       write.csv(tblSents, file=paste0(FileName, ".csv"),
               row.names=FALSE)                                 #    Save a CSV of the Sentiment data
+      write.csv(tblSentsWords, file=paste0(FileName, "_words.csv"),
+                row.names=FALSE)                                 #    Save a CSV of the Sentiment data
     }, error = function(err) {                                 # Catch block to report an error
       LogTask(err$message)
     })
@@ -276,7 +304,7 @@ mstr.ErrMsg<-tryCatch({
   duration <- paste0("*** Success! Total Elasped Time=",
                      format((proc.time() - timer0)[3],
                             nsmall=3), "sec")                  # Prepare success message
-  LogTask(duration)                                       # Display Success Message
+  LogTask(duration)                                            # Display Success Message
   save(list=ls(all=TRUE),
        file=paste0(FileName, "_FINAL.Rdata"))                  #  Finally, save all the objects in this environment to .Rdata file
 
