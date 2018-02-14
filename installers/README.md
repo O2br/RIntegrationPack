@@ -1,11 +1,11 @@
-#### Download the installer for your operating system
+#### Download the R Integration Pack installer for your operating system and version of MicroStrategy
 * New! [MicroStrategy Desktop 10.10 and Workstation 10.10 for Mac][mac10.10]
 * New! [MicroStrategy Desktop 10.10 and Workstation 10.10 for Windows][win10.10]
 * New! [MicroStrategy Platform 10.10 for Windows][platform10.10]
 * [MicroStategy Desktop 10.8 and earlier for Mac][mac]
 * [MicroStrategy Desktop 10.0 to 10.9 for Windows][win10]
 * [MicroStrategy Desktop 9 and earlier for Windows][win9]
-* [Linux](linux)
+* [Linux][linux]
 * [AIX][aix]
 * [SunOS][sunos]
 
@@ -51,8 +51,6 @@ The default installation location is one of the following (this location can be 
 /var/opt/RIntegrationPack (for root user)
 $HOME/RIntegrationPack (for non-root user)
 ```
-
-
 
 [mac]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/R%20Integration%20Pack.pkg>
 [win9]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/installers/RIntegrationPack.msi>
