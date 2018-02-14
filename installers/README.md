@@ -5,6 +5,7 @@
 * [MicroStategy Desktop 10.8 and earlier for Mac][mac]
 * [MicroStrategy Desktop 10.0 to 10.9 for Windows][win10]
 * [MicroStrategy Desktop 9 and earlier for Windows][win9]
+* [MicroStrategy Platform 10.9 and earlier for Windows][win9]
 * [Linux][linux]
 * [AIX][aix]
 * [SunOS][sunos]
