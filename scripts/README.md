@@ -15,7 +15,7 @@ These ready-to-use R scripts can easily be added to your R-enabled MicroStrategy
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_ARIMA.png" width="250">
 
-With time-based or time-series data, a common application of predictive analytics is forecasting. This method uses the Auto-Regressive Integrated with Moving Average (ARIMA) algorithm for forecasting future values. It leverages the “auto.arima” function from R’s “forecast” package to search through a variety of ARIMA configurations in order to find the best one. This script generates the forecasted value and confidence intervals, nominally set at 80% and 95%.
+A time-series method that uses the Auto-Regressive Integrated Moving Average (ARIMA) model for forecasting values. It leverages the “auto.arima” function from R’s “forecast” package to search through a variety of ARIMA configurations in order to find the best one. This script generates the forecast value and confidence intervals, nominally set at 80% and 95%.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -34,7 +34,7 @@ With time-based or time-series data, a common application of predictive analytic
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMeans.PNG" width="250">
 
-Using the k-Means algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a central point, it's "mean".
+A clustering algorithm that separates observations into k-number of clusters, where each cluster is defined by its mean. The algorithm seeks to minimize the variance within each cluster; this is interpreted as observations belonging to the cluster with the "nearest mean".
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -50,7 +50,7 @@ Using the k-Means algorithm, this analytic clusters records "by their nature" so
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMedoids.PNG" width="250">
 
-Using the k-Medoids algorithm, this analytic clusters records "by their nature" so that records within a cluster have more in common with each other than with those records in the other clusters. Each cluster is defined by a prototypical record, it's "medoid".
+A clustering algorithm that separates observations into k-number of clusters, where each cluster is defined by its medoid, a point within the cluster that is on average the least dissimilar to all the observations in the cluster. The algorithm seeks to minimize the absolute distance between the observations and the medoid of each cluster.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -64,7 +64,7 @@ Using the k-Medoids algorithm, this analytic clusters records "by their nature" 
 
 
 ## k-Nearest Neighbors
-k-Nearest Neighbors (kNN) is a simple classification technique that is unique in the sense that no model is explicitly trained. In the kNN process, two datasets are read in: the training dataset in which the dependent variable is already known, and the test dataset in which the dependent variable is unknown. Classifications for the test set are made by determining the k most similar records in the training dataset (known as neighbors) and returning the majority vote amongst those neighbors.
+A classification algorithm which assigns observations to a known classification group. Classifications for the test set are made by determining the k nearest observations in the training dataset, known as neighbors, and assigning the observation to a group based on the majority vote amongst those neighbors.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -81,7 +81,7 @@ k-Nearest Neighbors (kNN) is a simple classification technique that is unique in
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NaiveBayes.PNG" width="250">
 
-Naïve Bayes is a simple classification technique wherein the naïve assumption that the effect of the value of each variable is independent from all other variables is made. For each independent variable, the algorithm calculates the conditional likelihood of each potential class given the particular value for that variable and multiplies the effects together to determine the probability of each class. The class with the highest probability is returned as the predicted class.
+Naïve Bayes, also known as simple Bayes, is a classification technique that makes the assumption that the effect of the value of each variable feature is independent from all other features for each classification; this is known as naive independence. For each independent variable, the algorithm calculates the conditional likelihood of each potential classification given the value for each feature and multiplies the effects together to determine the probability that an observation belongs to each classification. The classification with the highest probability is returned as the predicted class.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -98,7 +98,7 @@ Naïve Bayes is a simple classification technique wherein the naïve assumption 
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NeuralNetwork.PNG" width="250">
 
-Neural Networks are an advanced machine learning technique inspired by the innerworkings of the human brain. A neural network consists of “neurons”, weights, and an activation function. Data is passed from each layer of the network to the output layer through a series of weights and transformations defined by the activation function.
+Neural networks are an advanced machine learning technique inspired by the innerworkings of the human brain. A neural network consists of “neurons”, weights, and an activation function. Data is passed from each layer of the network to the output layer through a series of weights and transformations defined by the activation function.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -115,7 +115,7 @@ Neural Networks are an advanced machine learning technique inspired by the inner
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_PairwiseCorr.PNG" width="250">
 
-Pairwise correlation measures the correlation between pairs of metrics to show how they behave with respect to each other. The primary output is a correlation plot and a correlation table containing correlations of the variables when taken in pairs.
+Pairwise correlation is a measure of the direction and strength of the relationship between pairs of metrics with respect to each other. This R script produces a correlation plot and a correlation table containing correlations of the variables when taken in pairs.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -131,7 +131,7 @@ Pairwise correlation measures the correlation between pairs of metrics to show h
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_RandomForest.PNG" width="250">
 
-Random Forest is a machine learning technique wherein numerous, independent decision trees are trained on randomized subsets of the training data. This is done to reduce overfitting. Data is passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
+Random Forest is a machine learning technique wherein numerous, independent decision trees are trained on randomized subsets of the training data in order to reduce overfitting. Data is passed into each individual decision tree for classification, and the class that is predicted by the majority of those decision trees is returned as the predicted class for that record.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -148,7 +148,7 @@ Random Forest is a machine learning technique wherein numerous, independent deci
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SeasonalForecast.PNG" width="250">
 
-With time-based or time-series data, a common application of predictive analytics is forecasting. This method uses R’s ordinary least squares regression algorithm to fit a function that captures the trend and seasonal variability of numerical data and can be used predict future values.
+A time-series forecast method that uses R’s ordinary least squares regression algorithm to fit a function that captures the trend and seasonal variability of numerical data and can be used predict future values.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -164,7 +164,7 @@ With time-based or time-series data, a common application of predictive analytic
 
 <img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SentimentAnalysis.png" width="250">
 
-Sentiment analysis aims to measure the attitude of a writer’s words within a given text. It is an application of text mining and is used to extract sentiment from social media sources such as survey results, Twitter tweets, and Facebook comments. This analytic uses R’s tidytext package to analyze text for sentiment by associating each word with classifications from two lexicons and returns the sentiment analyses as 14 different results, each can be represented by a MicroStrategy metric. In addition to these results which are returned “in-band” to MicroStrategy metrics in a report, dashboard or document, this analytic optionally can persist output “out-of-band” to the file system, including a result table as a comma-separated-value file, a word cloud and a sentiment score histogram.
+Sentiment analysis aims to measure the attitude of a writer’s words within a given text. It is an application of text mining and is used to extract sentiment from social media sources such as survey results, Twitter tweets, and Facebook comments. This metric uses R’s tidytext package to analyze text for sentiment by associating each word with classifications from two lexicons and returns the sentiment analyses as 14 different results, each can be represented by a MicroStrategy metric. In addition to these results which are returned “in-band” to MicroStrategy metrics in a report, dashboard or document, this metric optionally can persist output “out-of-band” to the file system, including a result table as a comma-separated-value file, a word cloud and a sentiment score histogram.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -191,7 +191,7 @@ Sentiment analysis aims to measure the attitude of a writer’s words within a g
 
 
 ## Stepwise Regression
-Stepwise linear regression is a variant on classical linear regression in which variables are only included in the model if they have a significant effect.
+A type of linear regression in which variables are only included in the model if they have a significant effect. Initially all variables are included and are eliminated one-by-one if a variable is statistically insignificant according to the specified significance criterion until the remaining model only includes variables which are deemed significant. This specification uses the Aikaike information criterion as the determination criterion. 
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -204,7 +204,7 @@ Stepwise linear regression is a variant on classical linear regression in which 
 
 
 ## Stepwise Logistic Regression
-Stepwise logistic regression is a variant on classical linear regression in which variables are only included in the final model if they have a significant effect.
+A type of regression in which the variable being forecasted is categorical ie. a class. This script creates a logistic regression model in which variables are only included in the model if they have a significant effect. Initially all variables are included and are eliminated one-by-one if a variable is statistically insignificant according to the specified significance criterion until the remaining model only includes variables which are deemed significant. This specification uses the Aikaike information criterion as the determination criterion. 
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -217,7 +217,7 @@ Stepwise logistic regression is a variant on classical linear regression in whic
 
 
 ## Survival Analysis
-Survival Analysis can be used to predict the probability of an event occuring, such as a component failure or a customer being lost. This script uses the Cox Regression algorithm to quantify the effect of each independent variable on the likelihood that an event will occur at some point in the future.
+Survival Analysis can be used to predict the probability of an event occuring over time, such as a component failure or a customer being lost. This script uses the Cox Regression algorithm to quantify the effect of each independent variable on the likelihood that an event will occur at some point in the future.
 
 | Output | MicroStrategy Metric Expression |
 | :----- | :------------------------------ |
@@ -230,17 +230,17 @@ Survival Analysis can be used to predict the probability of an event occuring, s
 
 
 ## How to use these scripts in a MicroStrategy dashboard
-These R Analytics are deployed to MicroStrategy as metrics by copying the metric expressions provided here into any MicroStrategy Metric Editor. The shelf includes metric expressions for Version 1 of the R Integration Pack as well as variations that take advantage of the new features in Version 2.
+These R metrics are deployed to MicroStrategy as metrics by copying the metric expressions provided here into any MicroStrategy Metric Editor. The shelf includes metric expressions for Version 1 of the R Integration Pack as well as variations that take advantage of the new features in Version 2.
 
-Version 2 of the R Integration Pack makes it even simpler for end-users control the analytic's execution thanks to the _Params parameter that allows function parameters to be referenced by name using a string of name-value pairs. This is in addition to the original set of 27 pre-defined parameters (9 boolean, 9 numeric and 9 string).
+Version 2 of the R Integration Pack makes it even simpler for end-users to control the metric's execution thanks to the _Params parameter that allows function parameters to be referenced by name using a string of name-value pairs. This is in addition to the original set of 27 pre-defined parameters (9 boolean, 9 numeric and 9 string).
 
-After you've copied the metric expression for the analytic you wish to deploy:
+After you've copied the metric expression for the metric you wish to deploy:
 1. Paste the Metric Expression into any MicroStrategy metric editor
-2. Match analytic's inputs and function parameters for your application
+2. Match metric's inputs and function parameters for your application
 3. Name and save the metric so it can be added to any MicroStrategy report or dashboard
 
 ## Disclaimers
-This page provides programming examples.  MicroStrategy grants you a nonexclusive copyright license to use all programming code examples from which you can use or generate similar function tailored to your own specific needs.  All sample code is provided for illustrative purposes only. These examples have not been thoroughly tested under all conditions. MicroStrategy, therefore, cannot guarantee or imply reliability, serviceability, or function of these programs.  All programs contained herein are provided to you "AS IS" without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.
+This page provides programming examples. MicroStrategy grants you a nonexclusive copyright license to use all programming code examples from which you can use or generate similar function tailored to your own specific needs. All sample code is provided for illustrative purposes only. These examples have not been thoroughly tested under all conditions. MicroStrategy, therefore, cannot guarantee or imply reliability, serviceability, or function of these programs. All programs contained herein are provided to you "AS IS" without any warranties of any kind. The implied warranties of non-infringement, merchantability and fitness for a particular purpose are expressly disclaimed.
 
 
 [lnk_top]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#off-the-shelf-r-scripts>
