@@ -35,7 +35,7 @@ Conceptually, think of the R metric as a black box with an R script inside. Micr
 
 #### Installation
 
-A one-time install of R and the R script functions into your MicroStrategy environment, performed by system administrator types or anyone with permissions to install and configure software on the system.
+For users who are on MicroStrategy 10.10 or older, a one-time install of R and the R script functions into your MicroStrategy environment, performed by a system administrator or anyone with permissions to install and configure software on the system. For users on MicroStrategy 10.11 or newer, the R Integration Pack comes packaged with MicroStrategy products; users will still need to install R.
 
 #### Deployment
 
