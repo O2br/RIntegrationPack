@@ -21,7 +21,7 @@ The MicroStrategy R Integration Pack makes it easy for anyone to deploy sophisti
  * Leverages all MicroStrategy platform features, including structured and unstructured data, in-memory cubes, re-usable metadata objects, visual data discovery, enterprise-level security and more, all seamlessly delivered via web and mobile, cloud and office.
  * Available at no extra cost
 
-<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_RIPBlockDiagram.png" width="350">
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/MISC-0348 0518 R-integration graphic_final.jpg" width="350">
 
 R programmers will be impressed with the drag-and-drop deployR() utility that makes capturing the metric's signature quick and easy.
 
@@ -31,8 +31,6 @@ But you don't need to know R to get started! Thanks to our online collection of 
 
 ## Getting started
 Conceptually, think of the R metric as a black box with an R script inside. MicroStrategy doesn't need to know much about the R script in the black box, it only needs to know how to pass data in and after the script has executed in the R environment, how to consume the results.
-
-<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/MISC-0348 0518 R-integration graphic_final.jpg" width="450">
 
 
 #### Installation
