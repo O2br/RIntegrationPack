@@ -32,7 +32,7 @@ But you don't need to know R to get started! Thanks to our online collection of 
 ## Getting started
 Conceptually, think of the R metric as a black box with an R script inside. MicroStrategy doesn't need to know much about the R script in the black box, it only needs to know how to pass data in and after the script has executed in the R environment, how to consume the results.
 
-<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Install-Deploy-NoNum.png" width="450">
+<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/MISC-0348 0518 R-integration graphic_final.jpg" width="450">
 
 
 #### Installation
@@ -43,15 +43,10 @@ A one-time install of R and the R script functions into your MicroStrategy envir
 
 Delivering results from R to any BI user is what the R Integration Pack is all about. Thanks to the ever-growing collection of "off-the-shelf" R scripts, you don’t need to know anything about R code, no programming is required. If you can create a metric in MicroStrategy, and practically anyone can, then you can deploy an R metric as well. It's really that simple!
 
-#### Development
-
-<img src="https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Develop-NoNum.png" width="450">
 
 
 
 [img1]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_RIPBlockDiagram.png
-[img2]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Install-Deploy-NoNum.png
-[img3]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_Develop-NoNum.png
 
 [user_guide]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/docs/Documentation_RIntegrationPackUserGuide.pdf>
 [scripts]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#off-the-shelf-r-scripts>
