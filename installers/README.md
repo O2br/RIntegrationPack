@@ -1,4 +1,11 @@
-#### Download the R Integration Pack installer for your operating system and version of MicroStrategy
+## Installation
+For the following products and versions, installing the R Integration Pack is not required. On these versions, the R Integration Pack comes pre-installed.
+* MicroStrategy Desktop 10.11 and later
+* MicroStrategy Workstation 10.11 and later
+* MicroStrategy Intelligent Enterprise 10.8 and later
+
+
+#### Download the R Integration Pack installer for your operating system and version of MicroStrategy. For more help, refer to our [support page on installation](http://www2.microstrategy.com/producthelp/current/RIntegrationPack/WebHelp/Lang_1033/Content/Install.htm)
 * [MicroStrategy Desktop 10.10 and Workstation 10.10 for Mac][mac10.10]
 * [MicroStrategy Desktop 10.10 and Workstation 10.10 for Windows][win10.10]
 * [MicroStrategy Platform 10.10 for Windows][platform10.10]
