@@ -46,7 +46,7 @@ Delivering results from R to any BI user is what the R Integration Pack is all a
 
 [img1]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/Home_RIPBlockDiagram.png
 
-[user_guide]: <https://github.com/MicroStrategy/RIntegrationPack/raw/master/docs/Documentation_RIntegrationPackUserGuide.pdf>
+[user_guide]: <http://www2.microstrategy.com/producthelp/current/RIntegrationPack/WebHelp/Lang_1033/Content/home.htm>
 [scripts]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#off-the-shelf-r-scripts>
 [cran]: <https://cran.r-project.org/package=MicroStrategyR>
 [mstr_community]: <https://community.microstrategy.com/s/topic/0TO44000000Flk7GAC/r-script-u108>
