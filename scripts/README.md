@@ -246,65 +246,65 @@ This page provides programming examples. MicroStrategy grants you a nonexclusive
 [lnk_top]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#off-the-shelf-r-scripts>
 
 [arima]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#arima>
-[arima_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_ARIMA.R>
-[arima_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_ARIMA.pdf>
+[arima_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/ARIMA.R>
+[arima_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/ARIMA.pdf>
 [arima_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_ARIMA.png
 
 [kcluster]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#k-means-clustering>
-[kcluster_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMeansClustering.R>
-[kcluster_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMeansClustering.pdf>
+[kcluster_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/kMeansClustering.R>
+[kcluster_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/kMeansClustering.pdf>
 [kcluster_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMeans.PNG
 
 [kmedoids]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#k-medoids-clustering>
-[kmedoids_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMedoidsClustering.R>
-[kmedoids_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kMedoidsClustering.pdf>
+[kmedoids_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/kMedoidsClustering.R>
+[kmedoids_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/kMedoidsClustering.pdf>
 [kmedoids_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_kMedoids.PNG
 
 [knn]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#k-nearest-neighbors>
-[knn_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kNN.R>
-[knn_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_kNN.pdf>
+[knn_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/kNN.R>
+[knn_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/kNN.pdf>
 
 [nb]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#naive-bayes>
-[nb_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NaiveBayes.R>
-[nb_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NaiveBayes.pdf>
+[nb_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/NaiveBayes.R>
+[nb_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/NaiveBayes.pdf>
 [nb_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NaiveBayes.PNG
 
 [nn]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#neural-network>
-[nn_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NeuralNetwork.R>
-[nn_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_NeuralNetwork.pdf>
+[nn_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/NeuralNetwork.R>
+[nn_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/NeuralNetwork.pdf>
 [nn_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_NeuralNetwork.PNG
 
 [pairwise]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#pairwise-correlation>
-[pairwise_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_PairwiseCorr.R>
-[pairwise_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_PairwiseCorr.pdf>
+[pairwise_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/PairwiseCorr.R>
+[pairwise_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/PairwiseCorr.pdf>
 [pairwise_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_PairwiseCorr.PNG
 
 [rf]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#random-forest>
-[rf_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_RandomForest.R>
-[rf_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_RandomForest.pdf>
+[rf_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RandomForest.R>
+[rf_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RandomForest.pdf>
 [rf_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_RandomForest.PNG
 
 [seasforecast]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#seasonal-forecasting>
-[seasforecast_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SeasonalForecasting.R>
-[seasforecast_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SeasonalForecasting.pdf>
+[seasforecast_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/SeasonalForecasting.R>
+[seasforecast_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/SeasonalForecasting.pdf>
 [seasforecast_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SeasonalForecast.PNG
 
 [stepreg]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#stepwise-regression>
-[stepreg_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseRegression.R>
-[stepreg_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseRegression.pdf>
+[stepreg_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/StepwiseRegression.R>
+[stepreg_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/StepwiseRegression.pdf>
 
 [steplogreg]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#stepwise-logistic-regression>
-[steplogreg_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseLogistic.R>
-[steplogreg_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_StepwiseLogistic.pdf>
+[steplogreg_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/StepwiseLogistic.R>
+[steplogreg_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/StepwiseLogistic.pdf>
 
 [survival]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#survival-analysis>
-[survival_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_Survival.R>
-[survival_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_Survival.pdf>
+[survival_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/Survival.R>
+[survival_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/Survival.pdf>
 [survival_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Survival.PNG
 
 [sentiment]: <https://github.com/MicroStrategy/RIntegrationPack/tree/master/scripts#sentiment-analysis>
-[sentiment_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SentimentAnalysis.R>
-[sentiment_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/RShelf_SentimentAnalysis.pdf>
+[sentiment_script]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/SentimentAnalysis.R>
+[sentiment_doc]: <https://github.com/MicroStrategy/RIntegrationPack/blob/master/scripts/SentimentAnalysis.pdf>
 [sentiment_img]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_SentimentAnalysis.png
 
 [img_howtouse]: https://github.com/MicroStrategy/RIntegrationPack/blob/master/assets/RShelf_Params3.png
