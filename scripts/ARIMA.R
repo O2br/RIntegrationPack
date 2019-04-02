@@ -8,7 +8,7 @@
 #DESC The output 'ForecastHi2' returns the forecasted upper value of the second confidence band.
 #DESC Revision A
 #
-#RVAR Target -input -numeric -vector
+#RVAR  -input -numeric -vector
 #
 #RVAR CycleLength -parameter NumericParam1
 #RVAR Horizon -parameter NumericParam2
@@ -24,18 +24,18 @@
 #RVAR ForecastHi2 -output -numeric -vector
 #
 #Version 1.0 Metric Expressions (uses the 27 Pre-defined Parameters):
-#EXP-v1 Forecast: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">(Target)
-#EXP-v1 ForecastLo1: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo1", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">(Target)
-#EXP-v1 ForecastHi1: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastHi1", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">(Target)
-#EXP-v1 ForecastLo2: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo2", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">(Target)
-#EXP-v1 ForecastHi2: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastHi2", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">(Target)
+#EXP-v1 Forecast: RScript<_RScriptFile="ARIMA.R", _InputNames="", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">()
+#EXP-v1 ForecastLo1: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastLo1", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">()
+#EXP-v1 ForecastHi1: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastHi1", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">()
+#EXP-v1 ForecastLo2: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastLo2", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">()
+#EXP-v1 ForecastHi2: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastHi2", SortBy=(Month), NumericParam1=12, NumericParam2=12, NumericParam3=80, NumericParam4=95, StringParam8="", StringParam9="">()
 #
 #Version 2.0 Metric Expressions (uses _Params for parameters):
-#EXP-v2 Forecast: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)
-#EXP-v2 ForecastLo1: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)
-#EXP-v2 ForecastHi1: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastHi1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)
-#EXP-v2 ForecastLo2: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastLo2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)
-#EXP-v2 ForecastHi2: RScript<_RScriptFile="ARIMA.R", _InputNames="Target", _OutputVar="ForecastHi2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">(Target)
+#EXP-v2 Forecast: RScript<_RScriptFile="ARIMA.R", _InputNames="", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">()
+#EXP-v2 ForecastLo1: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastLo1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">()
+#EXP-v2 ForecastHi1: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastHi1", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">()
+#EXP-v2 ForecastLo2: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastLo2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">()
+#EXP-v2 ForecastHi2: RScript<_RScriptFile="ARIMA.R", _InputNames="", _OutputVar="ForecastHi2", SortBy=(Month), _Params="CycleLength=12, Horizon=12, Conf1=80, Conf2=95, ImageName='', FileName=''">()
 #
 #MICROSTRATEGY_END
 
@@ -74,7 +74,7 @@ mstr.ErrMsg <- tryCatch({                                      #tryCatch for Exc
   #Get the data
   if(!exists("mstr.ExFlag")) {                                 #If this is NOT via a MicroStrategy Report Execution
     set.seed(42)                                               #  Set the random number generator seed
-    Target <- (seq(1:36) * (0.8 + (0.4*runif(36, 0, 1))))      #  Set some linear but noisy values for the Target
+     <- (seq(1:36) * (0.8 + (0.4*runif(36, 0, 1))))      #  Set some linear but noisy values for the 
     FileName <- "ARIMA_Rconsole"                               #  Set the Model Name
     CycleLength <- 12                                          #  It's Monthly Data
     Horizon <- 12                                              #  Forecast Horizon of 12 months
@@ -85,7 +85,7 @@ mstr.ErrMsg <- tryCatch({                                      #tryCatch for Exc
   }
   
   #Modeling
-  tsObj <- ts(Target[!is.na(Target)],
+  tsObj <- ts([!is.na()],
               frequency=CycleLength)                           #Create a time series object with this data -- without any nulls
   model <- auto.arima(tsObj, stepwise=TRUE,
                       trace=FALSE)                             #Build an ARIMA model using the "auto" ARIMA function
@@ -103,7 +103,7 @@ mstr.ErrMsg <- tryCatch({                                      #tryCatch for Exc
   
   #Additional results saved to files
   if(nchar(FileName)>0) {                                      #If FileName is not an empty string
-    save(list=c("Target", "model", "arimaFcst", "Forecast"),
+    save(list=c("", "model", "arimaFcst", "Forecast"),
          file=paste(FileName, ".Rdata", sep=""))               #Persist objects to file
   }
   if(nchar(ImageName)>0) {                                     #If FileName is not an empty string
